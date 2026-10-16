@@ -5,9 +5,8 @@
   var d = document;
   var raiz = d.documentElement;
   var calmo = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var temIO = 'IntersectionObserver' in window;
 
-  /* Eventos de conversão: GTM lê window.dataLayer (E5). */
+  /* Eventos de conversão: GTM lê window.dataLayer (E5). O parâmetro "local" diz de onde veio o clique. */
   window.dataLayer = window.dataLayer || [];
   function evento(nome, dados) {
     var item = { event: nome };
@@ -53,92 +52,61 @@
     window.addEventListener('resize', function () { if (window.innerWidth >= 1024) abrir(false); });
   }
 
-  /* Abas (módulos da plataforma). Sem JS, todos os painéis aparecem. */
-  Array.prototype.forEach.call(d.querySelectorAll('[role="tablist"]'), function (lista) {
-    var abas = Array.prototype.slice.call(lista.querySelectorAll('[role="tab"]'));
-    var ativar = function (aba, foco, avisar) {
-      var mudou = aba.getAttribute('aria-selected') !== 'true';
-      abas.forEach(function (a) {
-        var sel = a === aba;
-        a.setAttribute('aria-selected', sel ? 'true' : 'false');
-        a.tabIndex = sel ? 0 : -1;
-        var painel = d.getElementById(a.getAttribute('aria-controls'));
-        if (painel) painel.hidden = !sel;
+  /* Integrações: fios do sistema central até cada sistema, medidos nas posições reais.
+     No computador os sistemas ficam dos lados; no celular, embaixo, presos a uma espinha à esquerda.
+     Os pontos laranja (dados indo e voltando) só aparecem sem o pedido de menos movimento. */
+  var hub = d.querySelector('[data-hub]');
+  if (hub && window.SVGElement) {
+    var fios = hub.querySelector('.hub__fios');
+    var centro = hub.querySelector('.hub__centro');
+    var sistemas = Array.prototype.slice.call(hub.querySelectorAll('.sis'));
+    var n = function (v) { return Math.round(v * 10) / 10; };
+    var desenhar = function () {
+      var H = hub.getBoundingClientRect();
+      var c = centro.getBoundingClientRect();
+      if (!H.width || !c.width) return;
+      fios.setAttribute('viewBox', '0 0 ' + n(H.width) + ' ' + n(H.height));
+      var cy = c.top - H.top + c.height / 2;
+      var html = '';
+      sistemas.forEach(function (s, i) {
+        var r = s.getBoundingClientRect();
+        var y = r.top - H.top + r.height / 2;
+        var p;
+        if (r.right <= c.left + 1) {          // à esquerda do centro
+          var x0 = r.right - H.left, x1 = c.left - H.left, xb = (x0 + x1) / 2;
+          p = 'M' + n(x0) + ' ' + n(y) + 'H' + n(xb) + 'V' + n(cy) + 'H' + n(x1);
+        } else if (r.left >= c.right - 1) {   // à direita
+          var x2 = r.left - H.left, x3 = c.right - H.left, xd = (x2 + x3) / 2;
+          p = 'M' + n(x2) + ' ' + n(y) + 'H' + n(xd) + 'V' + n(cy) + 'H' + n(x3);
+        } else {                              // embaixo (celular)
+          var xe = r.left - H.left - 20;
+          p = 'M' + n(xe) + ' ' + n(c.bottom - H.top) + 'V' + n(y) + 'H' + n(r.left - H.left);
+        }
+        html += '<path d="' + p + '"/>';
+        if (!calmo) {
+          var dur = 3.4 + (i % 3) * 0.45;
+          var volta = i % 2 === 1 ? '1;0' : '0;1';   // metade sai do sistema, metade chega
+          var mov = '<animateMotion dur="' + dur.toFixed(2) + 's" begin="-' + (i * 0.7).toFixed(2) + 's" repeatCount="indefinite" calcMode="linear" keyTimes="0;1" keyPoints="' + volta + '" path="' + p + '"/>';
+          html += '<circle class="brilho" r="6">' + mov + '</circle><circle class="ponto" r="2.5">' + mov + '</circle>';
+        }
       });
-      if (foco) aba.focus();
-      if (avisar !== false && mudou) {
-        d.dispatchEvent(new CustomEvent('bf:aba', { detail: { aba: aba, painel: d.getElementById(aba.getAttribute('aria-controls')) } }));
-      }
+      fios.innerHTML = html;
     };
-    abas.forEach(function (aba, i) {
-      aba.addEventListener('click', function () { ativar(aba, false); });
-      aba.addEventListener('keydown', function (e) {
-        var passo = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
-        if (passo) { e.preventDefault(); ativar(abas[(i + passo + abas.length) % abas.length], true); }
-        else if (e.key === 'Home') { e.preventDefault(); ativar(abas[0], true); }
-        else if (e.key === 'End') { e.preventDefault(); ativar(abas[abas.length - 1], true); }
-      });
-    });
-    var inicial = abas.filter(function (a) { return a.getAttribute('aria-selected') === 'true'; })[0] || abas[0];
-    if (inicial) ativar(inicial, false, false);
-  });
-
-  /* Números que contam: o valor final já está no HTML; a contagem só roda quando aparece. */
-  var temGsap = !!(window.gsap && window.ScrollTrigger);
-  if (temIO && !calmo) {
-    var contar = function (el) {
-      var fim = parseFloat(el.getAttribute('data-contar'));
-      if (isNaN(fim)) return;
-      var sufixo = el.getAttribute('data-sufixo') || '';
-      var inicio = null;
-      var duracao = 1100;
-      var quadro = function (t) {
-        if (inicio === null) inicio = t;
-        var p = Math.min(1, (t - inicio) / duracao);
-        var v = Math.round(fim * (1 - Math.pow(1 - p, 3)));
-        el.textContent = v.toLocaleString('pt-BR') + sufixo;
-        if (p < 1) window.requestAnimationFrame(quadro);
-      };
-      window.requestAnimationFrame(quadro);
-    };
-    var obsNum = new IntersectionObserver(function (itens) {
-      itens.forEach(function (it) {
-        if (!it.isIntersecting) return;
-        obsNum.unobserve(it.target);
-        contar(it.target);
-      });
-    }, { threshold: 0.6 });
-    Array.prototype.forEach.call(d.querySelectorAll('[data-contar]'), function (n) { obsNum.observe(n); });
-  }
-
-  /* Método: a etapa ativa e o cartão do projeto. Com GSAP, quem move é o movimento.js. */
-  var metodo = d.querySelector('[data-metodo]');
-  if (metodo) {
-    var passos = Array.prototype.slice.call(metodo.querySelectorAll('[data-passo]'));
-    var projeto = metodo.querySelector('[data-projeto]');
-    var nomes = ['', 'Imersão', 'Arquitetura', 'Construção', 'Evolução'];
-    var proximas = ['', 'Mapa do processo atual', 'Protótipo navegável', 'Versão 2 para testar', 'Pacote de melhorias do mês'];
-    var atual = 2;
-    var marcarEtapa = function (n) {
-      if (n === atual) return;
-      atual = n;
-      passos.forEach(function (p) { p.classList.toggle('ativo', Number(p.getAttribute('data-passo')) === n); });
-      if (!projeto) return;
-      projeto.style.setProperty('--etapa', n);
-      var nome = projeto.querySelector('[data-etapa-nome]');
-      var texto = projeto.querySelector('[data-etapa-texto]');
-      var prox = projeto.querySelector('[data-proxima]');
-      if (nome) nome.textContent = nomes[n];
-      if (texto) texto.textContent = 'Etapa ' + n + ' de 4';
-      if (prox) prox.textContent = proximas[n];
-      Array.prototype.forEach.call(projeto.querySelectorAll('[data-estado]'), function (lista) {
-        lista.hidden = Number(lista.getAttribute('data-estado')) !== n;
-      });
-    };
-    window.bfMarcarEtapa = marcarEtapa;
+    var pedido = 0;
+    var agendar = function () { cancelAnimationFrame(pedido); pedido = requestAnimationFrame(desenhar); };
+    if (window.ResizeObserver) new ResizeObserver(agendar).observe(hub); else window.addEventListener('resize', agendar);
+    if (d.fonts && d.fonts.ready) d.fonts.ready.then(agendar);
+    agendar();
+    // fora da tela, os pontos param
+    if (!calmo && window.IntersectionObserver && fios.pauseAnimations) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) fios.unpauseAnimations(); else fios.pauseAnimations(); });
+      }).observe(hub);
+    }
   }
 
   /* Movimento (GSAP): carregado só depois da página pronta, para não atrasar o conteúdo nem a fonte. */
+  var temGsap = !!(window.gsap && window.ScrollTrigger);
   if (!calmo && !temGsap) {
     var pasta = (d.currentScript && d.currentScript.src || '').replace(/site\.js(\?.*)?$/, '');
     var arquivos = window.BF_MOVIMENTO || [pasta + 'vendor/gsap.min.js', pasta + 'vendor/ScrollTrigger.min.js', pasta + 'vendor/SplitText.min.js', pasta + 'movimento.js'];
