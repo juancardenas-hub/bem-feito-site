@@ -338,10 +338,6 @@ p, li, dd { text-wrap: pretty; }
 .imersao__foto img { object-fit: cover; }
 .imersao__foto::after { content: ""; position: absolute; inset: 0; background: radial-gradient(130% 100% at 50% 35%, rgba(11, 11, 11, 0) 55%, rgba(11, 11, 11, .4) 100%); pointer-events: none; }
 @media (max-width: 1023px) { .imersao__grade { grid-template-columns: minmax(0, 1fr); } .imersao__foto { max-width: 720px; } }
-/* foto ainda não licenciada: espaço reservado, só na prévia */
-.imersao__foto--pendente { border-style: dashed; border-color: var(--borda); }
-.imersao__foto--pendente::after { content: none; }
-.previa .imersao__foto--pendente .falta { position: absolute; left: 50%; top: 50%; width: max-content; max-width: calc(100% - 48px); transform: translate(-50%, -50%); text-align: center; }
 
 /* ---------- propriedade ---------- */
 .dono { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 48px 72px; align-items: center; }
