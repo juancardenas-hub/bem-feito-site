@@ -7,16 +7,23 @@ Site institucional da Bem-Feito Sistemas (Curitiba/PR). HTML, CSS e JavaScript e
 | Caminho | O que é |
 |---|---|
 | `index.html` | Home |
+| `sob-medida/index.html` | Página de Sistemas sob medida |
+| `integracoes/index.html` | Página de Integrações (compatibilidade com ERP, legados, bancos, notas, financeiro e WhatsApp) |
+| `parceiros/index.html` | Página da Plataforma para parceiros |
 | `assets/css/site.css` | Estilos, com as cores, tipos e espaços do Manual de Marca Bem-Feito |
-| `assets/js/site.js` | Menu, abas, eventos de conversão (`dataLayer`) e carregamento das animações |
+| `assets/js/site.js` | Menu, eventos de conversão (`dataLayer`), fios do diagrama de integrações e carregamento das animações |
 | `assets/js/movimento.js` | Animações com GSAP, ScrollTrigger e SplitText (arquivos em `assets/js/vendor/`) |
-| `assets/js/eclipse.js` | Horizonte 3D do topo, em WebGL |
 | `assets/fonts/` | Host Grotesk, licença SIL OFL 1.1 (`OFL.txt`) |
-| `assets/img/` | Logo, ícone e imagem de compartilhamento |
+| `assets/img/` | Logo, ícone, fotos e imagem de compartilhamento |
+| `sitemap.xml`, `robots.txt` | Mapa do site para o Google |
 
 ## Ver no computador
 
 Abra `index.html` no navegador, ou rode `python -m http.server` nesta pasta e acesse http://localhost:8000.
+
+## Contatos
+
+O número do WhatsApp aparece nos links `https://wa.me/...` das quatro páginas (topo, botões, rodapé e botão verde flutuante). Para trocar, substitua o número em todos os arquivos `index.html`. O e-mail e o @ ficam no rodapé de cada página.
 
 ## Pendências de conteúdo
 

@@ -2,7 +2,8 @@
    Só roda com o GSAP carregado e sem pedido de menos movimento.
    Regra: o conteúdo nunca fica escondido esperando a rolagem; o movimento parte de um estado visível.
    v2: movimento discreto. No topo, um ponto percorre o fluxo "do processo ao sistema" e volta pela evolução.
-   As fotos da faixa Imersão e do Próximo passo têm um paralaxe leve (só no computador). */
+   As fotos da faixa Imersão e do Próximo passo têm um paralaxe leve (só no computador).
+   v3: a Home ficou enxuta e cada solução ganhou a sua página; os seletores valem para todas. */
 (function () {
   'use strict';
   var d = document;
@@ -114,7 +115,16 @@
   function titulos() {
     if (!temSplit) return;
     todos('.cab .t-secao, .imersao .t-secao, .dono .t-secao, .proximo .t-secao').forEach(function (t) {
-      var s = new window.SplitText(t, { type: 'words', wordsClass: 'palavra' });
+      // o logo dentro do título ("O que a Bem-Feito faz.") não é dividido, e o nome continua no texto lido
+      var marcas = t.querySelectorAll('svg');
+      var nome = '';
+      if (marcas.length) {
+        var copia = t.cloneNode(true);
+        Array.prototype.forEach.call(copia.querySelectorAll('svg'), function (m) { m.replaceWith(m.getAttribute('aria-label') || ''); });
+        nome = copia.textContent.replace(/\s+/g, ' ').trim();
+      }
+      var s = new window.SplitText(t, { type: 'words', wordsClass: 'palavra', ignore: marcas.length ? marcas : undefined });
+      if (nome) t.setAttribute('aria-label', nome);
       gsap.set(t, { perspective: 700 });
       var tl = gsap.timeline({ scrollTrigger: { trigger: t, start: 'top 94%', end: 'top 60%', scrub: 0.6 } });
       tl.from(s.words, { yPercent: 40, rotateX: -60, transformOrigin: '50% 100%', stagger: 0.06, ease: 'none' }, 0);
@@ -123,11 +133,11 @@
 
   /* ---------- blocos que sobem com a rolagem (sempre visíveis) ---------- */
   function entradas() {
-    [['.pilares', '.pilar'], ['.opcoes', '.opcao']].forEach(function (g) {
-      var pai = d.querySelector(g[0]);
-      if (!pai) return;
-      var tl = gsap.timeline({ scrollTrigger: { trigger: pai, start: 'top 96%', end: 'top 55%', scrub: 0.7 } });
-      todos(g[1], pai).forEach(function (el, i) { tl.from(el, { y: 36 + i * 18, ease: 'none', duration: 1 }, 0); });
+    [['.pilares', '.pilar'], ['.opcoes', '.opcao'], ['.etapas__lista', '.etapa']].forEach(function (g) {
+      todos(g[0]).forEach(function (pai) {
+        var tl = gsap.timeline({ scrollTrigger: { trigger: pai, start: 'top 96%', end: 'top 55%', scrub: 0.7 } });
+        todos(g[1], pai).forEach(function (el, i) { tl.from(el, { y: 36 + i * 18, ease: 'none', duration: 1 }, 0); });
+      });
     });
   }
 
