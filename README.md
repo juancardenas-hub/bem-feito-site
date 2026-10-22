@@ -13,6 +13,7 @@ Site institucional da Bem-Feito Sistemas (Curitiba/PR). HTML, CSS e JavaScript e
 | `assets/css/site.css` | Estilos, com as cores, tipos e espaços do Manual de Marca Bem-Feito |
 | `assets/js/site.js` | Menu, eventos de conversão (`dataLayer`), fios do diagrama de integrações e carregamento das animações |
 | `assets/js/movimento.js` | Animações com GSAP, ScrollTrigger e SplitText (arquivos em `assets/js/vendor/`) |
+| `assets/js/eclipse.js` | Planeta do topo da Home em 3D (WebGL); sem WebGL fica o planeta em CSS |
 | `assets/fonts/` | Host Grotesk, licença SIL OFL 1.1 (`OFL.txt`) |
 | `assets/img/` | Logo, ícone, fotos e imagem de compartilhamento |
 | `sitemap.xml`, `robots.txt` | Mapa do site para o Google |

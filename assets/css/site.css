@@ -232,6 +232,21 @@ p, li, dd { text-wrap: pretty; }
 .heroi__palco { position: relative; margin-top: clamp(48px, 5vw, 72px); padding-bottom: clamp(96px, 10vw, 148px); }
 .heroi__palco .envolve { position: relative; z-index: 1; }
 
+/* planeta do topo (22/10: o globo da v2 voltou, mais acima e centrado).
+   .horizonte é o planeta em CSS (sem WebGL ou com menos movimento) e também a medida que o eclipse.js usa
+   para desenhar o globo em 3D no mesmo lugar: topo do aro em --horizonte (a partir do topo do palco),
+   diâmetro em --planeta. O globo some aos poucos entre --some-ini e --some-fim abaixo do aro,
+   antes do arco dourado da cúpula. */
+.heroi__palco { --horizonte: -28px; --planeta: max(1400px, 120vw); --some-ini: 200px; --some-fim: 400px; }
+.heroi__palco::before { content: ""; position: absolute; z-index: 0; left: 50%; top: var(--horizonte); width: min(1300px, 120vw); height: 300px; transform: translate(-50%, -55%); background: radial-gradient(50% 50% at 50% 55%, rgba(var(--laranja-rgb), .24), rgba(var(--laranja-rgb), 0) 72%); pointer-events: none; }
+.horizonte { position: absolute; z-index: 0; left: 50%; top: var(--horizonte); width: var(--planeta); aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(closest-side, #080808 94%, #120b05 100%); box-shadow: inset 0 1.5px 0 rgba(255, 196, 140, .95), inset 0 22px 60px -30px rgba(var(--laranja-rgb), .8), 0 -2px 26px rgba(var(--laranja-rgb), .55), 0 -30px 110px -18px rgba(var(--laranja-rgb), .38); pointer-events: none; -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 var(--some-ini), transparent var(--some-fim)); mask-image: linear-gradient(to bottom, #000 0, #000 var(--some-ini), transparent var(--some-fim)); }
+/* globo em WebGL: entra no lugar do planeta em CSS quando o primeiro quadro é desenhado */
+.eclipse { position: absolute; z-index: 0; left: 0; top: -220px; width: 100%; height: calc(100% + 220px); pointer-events: none; opacity: 0; transition: opacity 1s ease; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 140px, #000 calc(220px + var(--horizonte) + var(--some-ini)), transparent calc(220px + var(--horizonte) + var(--some-fim))); mask-image: linear-gradient(to bottom, transparent 0, #000 140px, #000 calc(220px + var(--horizonte) + var(--some-ini)), transparent calc(220px + var(--horizonte) + var(--some-fim))); }
+.eclipse-ativo .eclipse { opacity: 1; }
+.horizonte, .heroi__palco::before { transition: opacity 1s ease; }
+.eclipse-ativo .horizonte, .heroi__palco.eclipse-ativo::before { opacity: 0; }
+@media (max-width: 767px) { .heroi__palco { --horizonte: -24px; --planeta: 150vw; --some-ini: 240px; --some-fim: 480px; } }
+
 /* como trabalhamos: do processo ao sistema */
 .fluxo-bloco { display: grid; justify-items: center; gap: 24px; max-width: 1180px; margin-inline: auto; }
 .fluxo-bloco__rotulo { margin: 0; color: var(--titulo); }
@@ -479,6 +494,7 @@ p, li, dd { text-wrap: pretty; }
   .fluxo > li:nth-child(5) { animation-delay: .24s; }
   .fluxo > li:nth-child(6) { animation-delay: .3s; }
   .heroi h1 .degrade { animation: acender-texto 2.2s .35s ease-in-out backwards; }
+  .heroi .horizonte, .heroi__palco::before { animation: acender 1.8s cubic-bezier(.2, .7, .2, 1) both; }
   .frase__barra { animation: barra 1.2s .5s cubic-bezier(.2, .7, .2, 1) backwards; }
   @keyframes acender { from { filter: brightness(.5); } to { filter: none; } }
   @keyframes subir { from { translate: 0 40px; } to { translate: 0 0; } }
