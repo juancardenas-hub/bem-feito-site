@@ -1,8 +1,8 @@
 /* Bem-Feito Sistemas · eclipse
    O planeta do topo em 3D (WebGL puro, sem biblioteca): um globo escuro com a grade da marca,
    girando devagar, com o aro laranja e pulsos de dados correndo pelos meridianos.
-   v3 (22/10): o globo voltou mais acima, com o aro aparecendo acima do "Como trabalhamos", e o canvas
-   ficou transparente fora do globo para a cúpula da v3 (fundo e arco dourado) continuar aparecendo.
+   v3 (23/10): o globo fica atrás do texto do topo (título, frase e botões), com o aro passando acima do
+   título. O canvas é transparente fora do globo, para a cúpula (fundo e arco dourado) continuar aparecendo.
    Posição e tamanho vêm do .horizonte (CSS): topo do aro em --horizonte, diâmetro em --planeta.
    Sem WebGL, ou com pedido de menos movimento, fica o planeta desenhado em CSS. */
 (function () {
@@ -13,7 +13,6 @@
   var horizonte = palco.querySelector('.horizonte');
   if (!horizonte) return;
 
-  var ACIMA = 220; // px de tela acima do palco, para o halo (igual ao top do .eclipse no CSS)
   var canvas = document.createElement('canvas');
   canvas.className = 'eclipse';
   canvas.setAttribute('aria-hidden', 'true');
@@ -132,7 +131,8 @@
     var cs = getComputedStyle(horizonte);
     largura = canvas.clientWidth;
     altura = canvas.clientHeight;
-    rim = (ACIMA + parseFloat(cs.top)) * dpr;
+    // topo do aro medido a partir do próprio canvas (o canvas cobre o .heroi__planeta inteiro)
+    rim = (horizonte.getBoundingClientRect().top - canvas.getBoundingClientRect().top) * dpr;
     raio = (parseFloat(cs.width) / 2) * dpr;
     canvas.width = Math.max(1, Math.round(largura * dpr));
     canvas.height = Math.max(1, Math.round(altura * dpr));
@@ -160,7 +160,7 @@
     var e = 1 - Math.pow(1 - intro, 3);
     mouse.x += (mouse.ax - mouse.x) * 0.04;
     mouse.y += (mouse.ay - mouse.y) * 0.04;
-    var fim = palco.offsetTop + palco.offsetHeight;
+    var fim = palco.getBoundingClientRect().bottom + window.scrollY;
     var rol = Math.max(0, Math.min(1, window.scrollY / Math.max(1, fim)));
     gl.clear(gl.COLOR_BUFFER_BIT);
     gl.uniform2f(u.uRes, canvas.width, canvas.height);

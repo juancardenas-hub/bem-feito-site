@@ -54,7 +54,7 @@
   <div class="envolve">
     <div class="topo__barra">
       <a class="topo__logo" href="./" aria-label="Bem-Feito Sistemas, página inicial">
-        <img src="assets/img/bem-feito-compacta-escuro.svg" width="160" height="18" alt="Bem-Feito">
+        <img src="assets/img/bem-feito-compacta-escuro.svg" width="160" height="19" alt="Bem-Feito">
       </a>
       <nav class="nav" aria-label="Principal">
         <ul role="list">
@@ -90,18 +90,21 @@
 
   <!-- 1. Topo: quem somos em uma frase + como trabalhamos (do processo ao sistema) -->
   <section class="cupula heroi" aria-labelledby="heroi-titulo">
-    <div class="envolve heroi__texto">
-      <p class="colchete">Software sob medida</p>
-      <h1 class="t-display" id="heroi-titulo">Seu negócio não deve se adaptar ao software. <span class="degrade">Nós criamos o software para ele.</span></h1>
-      <p class="frase"><span>Primeiro o processo.</span><span class="frase__barra" aria-hidden="true"></span><span>Depois o sistema.</span></p>
-      <div class="acoes">
-        <a class="btn btn--pri" href="https://wa.me/554198985529?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Bem-Feito." target="_blank" rel="noopener" data-evento="whatsapp_click" data-local="heroi">Falar com um especialista</a>
-        <a class="btn btn--sec" href="#solucoes">Conhecer as soluções</a>
+    <div class="heroi__topo">
+      <!-- planeta atrás do texto do topo (globo em 3D; sem WebGL, o planeta em CSS) -->
+      <div class="heroi__planeta" data-eclipse aria-hidden="true"><div class="horizonte"></div></div>
+      <div class="envolve heroi__texto">
+        <p class="colchete">Software sob medida</p>
+        <h1 class="t-display" id="heroi-titulo">Seu negócio não deve se adaptar ao software. <span class="degrade">Nós criamos o software para ele.</span></h1>
+        <p class="frase"><span>Primeiro o processo.</span><span class="frase__barra" aria-hidden="true"></span><span>Depois o sistema.</span></p>
+        <div class="acoes">
+          <a class="btn btn--pri" href="https://wa.me/554198985529?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Bem-Feito." target="_blank" rel="noopener" data-evento="whatsapp_click" data-local="heroi">Falar com um especialista</a>
+          <a class="btn btn--sec" href="#solucoes">Conhecer as soluções</a>
+        </div>
       </div>
     </div>
 
-    <div class="heroi__palco" data-eclipse>
-      <div class="horizonte" aria-hidden="true"></div>
+    <div class="heroi__palco">
       <div class="envolve">
         <div class="fluxo-bloco" id="metodo">
           <h2 class="colchete fluxo-bloco__rotulo">Como trabalhamos</h2>
@@ -145,7 +148,7 @@
       <div class="cab">
         <div class="cab__titulo">
           <p class="colchete">Soluções</p>
-          <h2 class="t-secao" id="solucoes-titulo">O que a <svg class="marca-em-linha" viewBox="7.40 -68.80 611.00 68.80" role="img" aria-label="Bem-Feito" focusable="false"><g fill="currentColor"><path d="M72.2 -51.90Q72.2 -39.2 60.7 -35.9V-35.5Q73.8 -32.5 73.8 -18.3Q73.8 -12.9 71.15 -8.75Q68.5 -4.60 63.90 -2.30Q59.30 0.0 53.80 0.0H7.4V-68.8H53.2Q58.40 -68.8 62.75 -66.65Q67.10 -64.5 69.65 -60.6Q72.2 -56.7 72.2 -51.90ZM29.5 -42.0H44.7Q46.90 -42.0 48.35 -43.55Q49.80 -45.1 49.80 -47.40V-48.40Q49.80 -50.6 48.30 -52.15Q46.80 -53.7 44.7 -53.7H29.5ZM29.5 -16.0H46.30Q48.5 -16.0 49.95 -17.55Q51.40 -19.1 51.40 -21.40V-22.40Q51.40 -24.70 49.95 -26.25Q48.5 -27.8 46.30 -27.8H29.5Z"/><path d="M86.20 -68.8H145.70V-52.30H108.30V-42.80H140.3V-27.0H108.30V-16.5H146.40V0.0H86.20Z"/><path d="M218.5 0.0V-24.8Q218.5 -29.40 218.85 -34.25Q219.2 -39.1 219.6 -42.40Q220.0 -45.7 220.10 -46.6H219.7L207.0 0.0H189.7L176.9 -46.5H176.5Q176.6 -45.6 177.05 -42.35Q177.5 -39.1 177.9 -34.25Q178.3 -29.40 178.3 -24.8V0.0H158.0V-68.8H189.2L199.6 -29.1H200.0L210.3 -68.8H240.4V0.0Z"/><path transform="translate(289.00 0)" d="M7.4 -68.8H63.0V-52.30H29.5V-40.5H58.30V-24.70H29.5V0.0H7.4Z"/><path transform="translate(289.00 0)" d="M75.10 -68.8H134.60V-52.30H97.2V-42.80H129.2V-27.0H97.2V-16.5H135.3V0.0H75.10Z"/><path transform="translate(289.00 0)" d="M149.3 0.0V-68.8H171.4V0.0Z"/><path transform="translate(289.00 0)" d="M227.8 -51.2V0.0H205.70V-51.2H183.10V-68.8H250.3V-51.2Z"/><path transform="translate(289.00 0)" d="M329.40 -34.4Q329.40 -17.0 319.70 -7.9Q310.0 1.20 292.20 1.20Q274.40 1.20 264.75 -7.85Q255.10 -16.90 255.10 -34.4Q255.10 -51.90 264.75 -60.95Q274.40 -70.0 292.20 -70.0Q310.0 -70.0 319.70 -60.90Q329.40 -51.80 329.40 -34.4ZM277.70 -37.6V-31.20Q277.70 -23.90 281.40 -19.6Q285.1 -15.3 292.20 -15.3Q299.3 -15.3 303.05 -19.6Q306.8 -23.90 306.8 -31.20V-37.6Q306.8 -44.90 303.05 -49.2Q299.3 -53.5 292.20 -53.5Q285.1 -53.5 281.40 -49.2Q277.70 -44.90 277.70 -37.6Z"/></g><rect x="250.40" y="-45.45" width="36.00" height="22.10" fill="#EC7000"/></svg> faz.</h2>
+          <h2 class="t-secao" id="solucoes-titulo">O que a <svg class="marca-em-linha" viewBox="5.70 -70.00 591.90 70.00" role="img" aria-label="Bem-Feito" focusable="false"><g fill="currentColor"><path d="M5.7 0.0V-70.0H43.1Q57.6 -70.0 64.5 -64.85Q71.4 -59.7 71.4 -51.7Q71.4 -46.400000000000006 68.45 -42.25Q65.5 -38.1 59.900000000000006 -35.7Q54.300000000000004 -33.300000000000004 46.1 -33.300000000000004L48.1 -38.7Q56.300000000000004 -38.7 62.25 -36.400000000000006Q68.2 -34.1 71.45 -29.75Q74.7 -25.400000000000002 74.7 -19.3Q74.7 -10.200000000000001 67.15 -5.1000000000000005Q59.6 0.0 45.1 0.0ZM28.900000000000002 -16.5H43.1Q47.0 -16.5 48.95 -17.9Q50.900000000000006 -19.3 50.900000000000006 -22.0Q50.900000000000006 -24.700000000000003 48.95 -26.1Q47.0 -27.5 43.1 -27.5H27.3V-43.1H39.900000000000006Q43.900000000000006 -43.1 45.75 -44.45Q47.6 -45.800000000000004 47.6 -48.300000000000004Q47.6 -50.900000000000006 45.75 -52.2Q43.900000000000006 -53.5 39.900000000000006 -53.5H28.900000000000002Z"/><path d="M83.00000000000001 0.0V-70.0H139.9V-52.2H106.20000000000002V-17.8H141.20000000000002V0.0ZM104.60000000000001 -27.0V-44.0H135.8V-27.0Z"/><path d="M150.3 0.0V-70.0H169.70000000000002L197.70000000000002 -24.3H187.50000000000003L214.70000000000005 -70.0H234.10000000000002L234.3 0.0H212.8L212.60000000000002 -37.6H216.00000000000003L197.40000000000003 -6.300000000000001H187.00000000000003L167.60000000000002 -37.6H171.8V0.0Z"/><path transform="translate(284.60 0)" d="M5.7 0.0V-70.0H62.6V-52.2H29.3V0.0ZM27.700000000000003 -22.400000000000002V-40.2H58.5V-22.400000000000002Z"/><path transform="translate(284.60 0)" d="M70.10000000000001 0.0V-70.0H127.0V-52.2H93.30000000000001V-17.8H128.3V0.0ZM91.7 -27.0V-44.0H122.9V-27.0Z"/><path transform="translate(284.60 0)" d="M137.39999999999998 0.0V-70.0H161.0V0.0Z"/><path transform="translate(284.60 0)" d="M187.6 0.0V-51.7H167.1V-70.0H231.7V-51.7H211.2V0.0Z"/><path transform="translate(284.60 0)" d="M273.6 1.6Q265.0 1.6 257.75 -1.1Q250.5 -3.8000000000000003 245.2 -8.75Q239.9 -13.700000000000001 236.95 -20.400000000000002Q234.0 -27.1 234.0 -35.0Q234.0 -43.0 236.95 -49.650000000000006Q239.9 -56.300000000000004 245.2 -61.25Q250.5 -66.2 257.75 -68.9Q265.0 -71.60000000000001 273.5 -71.60000000000001Q282.1 -71.60000000000001 289.3 -68.9Q296.5 -66.2 301.8 -61.25Q307.1 -56.300000000000004 310.05 -49.650000000000006Q313.0 -43.0 313.0 -35.0Q313.0 -27.1 310.05 -20.400000000000002Q307.1 -13.700000000000001 301.8 -8.75Q296.5 -3.8000000000000003 289.3 -1.1Q282.1 1.6 273.6 1.6ZM273.5 -17.5Q276.8 -17.5 279.65 -18.700000000000003Q282.5 -19.900000000000002 284.65 -22.150000000000002Q286.8 -24.400000000000002 288.0 -27.650000000000002Q289.2 -30.900000000000002 289.2 -35.0Q289.2 -39.1 288.0 -42.35Q286.8 -45.6 284.65 -47.85Q282.5 -50.1 279.65 -51.3Q276.8 -52.5 273.5 -52.5Q270.2 -52.5 267.35 -51.3Q264.5 -50.1 262.35 -47.85Q260.2 -45.6 259.0 -42.35Q257.8 -39.1 257.8 -35.0Q257.8 -30.900000000000002 259.0 -27.650000000000002Q260.2 -24.400000000000002 262.35 -22.150000000000002Q264.5 -19.900000000000002 267.35 -18.700000000000003Q270.2 -17.5 273.5 -17.5Z"/></g><rect x="244.30" y="-46.80" width="36.00" height="23.60" fill="#EC7000"/></svg> faz.</h2>
         </div>
         <p class="t-grande">Sistema novo, integração com o que você já usa ou plataforma para a sua consultoria.</p>
       </div>
@@ -277,7 +280,7 @@
   <div class="envolve">
     <div class="rodape__topo">
       <div class="rodape__marca">
-        <img src="assets/img/bem-feito-principal-escuro.svg" width="220" height="40" alt="Bem-Feito Sistemas">
+        <img src="assets/img/bem-feito-principal-escuro.svg" width="220" height="42" alt="Bem-Feito Sistemas">
         <p class="rodape__frase">Primeiro o processo. Depois o sistema.</p>
       </div>
       <nav aria-labelledby="rodape-nav">
