@@ -15,7 +15,7 @@ Site institucional da Bem-Feito Sistemas (Curitiba/PR). HTML, CSS e JavaScript e
 | `assets/js/movimento.js` | Animações com GSAP, ScrollTrigger e SplitText (arquivos em `assets/js/vendor/`) |
 | `assets/js/eclipse.js` | Planeta do topo da Home em 3D (WebGL); sem WebGL fica o planeta em CSS |
 | `assets/fonts/` | Host Grotesk, licença SIL OFL 1.1 (`OFL.txt`) |
-| `assets/img/` | Logo, ícone, fotos e imagem de compartilhamento |
+| `assets/img/` | Logo, ícone, fotos, logos de clientes (`clientes/`) e imagem de compartilhamento |
 | `sitemap.xml`, `robots.txt` | Mapa do site para o Google |
 
 ## Ver no computador
@@ -24,7 +24,7 @@ Abra `index.html` no navegador, ou rode `python -m http.server` nesta pasta e ac
 
 ## Contatos
 
-O número do WhatsApp aparece nos links `https://wa.me/...` das quatro páginas (topo, botões, rodapé e botão verde flutuante). Para trocar, substitua o número em todos os arquivos `index.html`. O e-mail e o @ ficam no rodapé de cada página.
+WhatsApp (41) 2024-0044, @bemfeitosistemas e contato@bemfeitosistemas.com.br. O número aparece nos links `https://wa.me/554120240044...` das quatro páginas (topo, botões, rodapé e botão verde flutuante); para trocar, substitua o número em todos os arquivos `index.html`. O e-mail e o @ ficam no rodapé de cada página.
 
 ## Pendências de conteúdo
 

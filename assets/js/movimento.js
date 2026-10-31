@@ -133,7 +133,7 @@
 
   /* ---------- blocos que sobem com a rolagem (sempre visíveis) ---------- */
   function entradas() {
-    [['.pilares', '.pilar'], ['.opcoes', '.opcao'], ['.etapas__lista', '.etapa']].forEach(function (g) {
+    [['.pilares', '.pilar'], ['.opcoes', '.opcao'], ['.etapas__lista', '.etapa'], ['.plataformas', '.plataforma']].forEach(function (g) {
       todos(g[0]).forEach(function (pai) {
         var tl = gsap.timeline({ scrollTrigger: { trigger: pai, start: 'top 96%', end: 'top 55%', scrub: 0.7 } });
         todos(g[1], pai).forEach(function (el, i) { tl.from(el, { y: 36 + i * 18, ease: 'none', duration: 1 }, 0); });
