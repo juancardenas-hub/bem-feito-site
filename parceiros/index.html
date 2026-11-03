@@ -26,6 +26,7 @@
 <script>(function(h){h.classList.add('js');if(!/(^|\.)bemfeitosistemas\.com\.br$/.test(location.hostname))h.classList.add('previa');})(document.documentElement);</script>
 <script src="../assets/js/site.js" defer></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://www.bemfeitosistemas.com.br/"}, {"@type": "ListItem", "position": 2, "name": "Plataforma para parceiros", "item": "https://www.bemfeitosistemas.com.br/parceiros/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Minha consultoria pode ser parceira?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Consultorias de NR-1 e ESG podem usar as plataformas prontas com os seus clientes ou levar a própria metodologia para uma plataforma exclusiva."}}, {"@type": "Question", "name": "A plataforma fica com a marca da minha consultoria?", "acceptedAnswer": {"@type": "Answer", "text": "Depende do modelo de parceria. Quando a Bem-Feito negocia direto com o cliente final, a plataforma fica com a cara da Bem-Feito. Quando a sua consultoria comercializa, ela também leva a sua marca."}}, {"@type": "Question", "name": "Quem dá o suporte ao cliente?", "acceptedAnswer": {"@type": "Answer", "text": "Nas plataformas que já existem, todo o suporte é da Bem-Feito. No projeto customizado, depende do modelo: a sua consultoria pode prestar o suporte inicial, com a Bem-Feito no suporte especializado, ou a Bem-Feito presta o suporte completo ao cliente final."}}, {"@type": "Question", "name": "Como a minha consultoria ganha com a parceria?", "acceptedAnswer": {"@type": "Answer", "text": "Indicando as plataformas que já existem, a sua consultoria recebe comissionamento. No projeto customizado, ela pode vender a plataforma, indicar a Bem-Feito ou contratar um pacote de acessos para comercializar."}}]}</script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -47,6 +48,11 @@
   <symbol id="i-360" viewBox="0 0 24 24"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3 M19.5 3.75v4.5H15"/><circle cx="12" cy="10.5" r="2.25"/><path d="M8.25 16.25c.6-1.7 2-2.6 3.75-2.6s3.15.9 3.75 2.6"/></symbol>
   <symbol id="i-esg" viewBox="0 0 24 24"><path d="M5 19.5c0-7.5 4.5-12.5 14.5-14.5-1 9-6 14-14.5 14.5z M5 19.5l7.5-7.5"/></symbol>
   <symbol id="i-banco" viewBox="0 0 24 24"><path d="M3.5 9.5L12 4.5l8.5 5 M5.5 10.5v7 M9.83 10.5v7 M14.17 10.5v7 M18.5 10.5v7 M3.5 19.5h17"/></symbol>
+  <symbol id="i-processo" viewBox="0 0 24 24"><path d="M3.5 4h6v5h-6z M14.5 15h6v5h-6z M6.5 9v8.5h8 M11.5 15l3 2.5-3 2.5"/></symbol>
+  <symbol id="i-sinc" viewBox="0 0 24 24"><path d="M4.5 10a7.5 7.5 0 0 1 13.2-3.6L19.5 8.5 M19.5 4v4.5H15 M19.5 14a7.5 7.5 0 0 1-13.2 3.6L4.5 15.5 M4.5 20v-4.5H9"/></symbol>
+  <symbol id="i-local" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.25"/></symbol>
+  <symbol id="i-celular" viewBox="0 0 24 24"><path d="M7.5 3.5h9v17h-9z M11 17.25h2"/></symbol>
+  <symbol id="i-portal" viewBox="0 0 24 24"><path d="M3.5 5h17v14h-17z M3.5 9h17 M6.5 7h.5 M9 7h.5"/></symbol>
 </svg>
 
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
@@ -190,7 +196,38 @@
     </div>
   </section>
 
-  <section class="secao claro linhas" aria-labelledby="outras-titulo" style="--secao-y: clamp(56px, 6vw, 88px)">
+  <!-- Perguntas desta página (saíram da Home em 31/10) -->
+  <section class="secao claro linhas" id="perguntas" aria-labelledby="perguntas-titulo">
+    <span class="cruz cruz--te" aria-hidden="true"></span><span class="cruz cruz--td" aria-hidden="true"></span>
+    <div class="envolve">
+      <div class="cab cab--centro">
+        <div class="cab__titulo">
+          <p class="colchete">Perguntas</p>
+          <h2 class="t-secao" id="perguntas-titulo">Perguntas frequentes</h2>
+        </div>
+      </div>
+      <div class="perguntas">
+        <details class="pergunta" name="perguntas" open>
+          <summary>Minha consultoria pode ser parceira?<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+          <div class="pergunta__resp"><p>Sim. Consultorias de NR-1 e ESG podem usar as plataformas prontas com os seus clientes ou levar a própria metodologia para uma plataforma exclusiva.</p></div>
+        </details>
+        <details class="pergunta" name="perguntas">
+          <summary>A plataforma fica com a marca da minha consultoria?<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+          <div class="pergunta__resp"><p>Depende do modelo de parceria. Quando a Bem-Feito negocia direto com o cliente final, a plataforma fica com a cara da Bem-Feito. Quando a sua consultoria comercializa, ela também leva a sua marca.</p></div>
+        </details>
+        <details class="pergunta" name="perguntas">
+          <summary>Quem dá o suporte ao cliente?<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+          <div class="pergunta__resp"><p>Nas plataformas que já existem, todo o suporte é da Bem-Feito. No projeto customizado, depende do modelo: a sua consultoria pode prestar o suporte inicial, com a Bem-Feito no suporte especializado, ou a Bem-Feito presta o suporte completo ao cliente final.</p></div>
+        </details>
+        <details class="pergunta" name="perguntas">
+          <summary>Como a minha consultoria ganha com a parceria?<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+          <div class="pergunta__resp"><p>Indicando as plataformas que já existem, a sua consultoria recebe comissionamento. No projeto customizado, ela pode vender a plataforma, indicar a Bem-Feito ou contratar um pacote de acessos para comercializar.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao claro cinza linhas" aria-labelledby="outras-titulo" style="--secao-y: clamp(56px, 6vw, 88px)">
     <div class="envolve">
       <h2 class="colchete" id="outras-titulo" style="margin-bottom: 20px">Veja também</h2>
       <div class="outras">

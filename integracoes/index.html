@@ -26,6 +26,7 @@
 <script>(function(h){h.classList.add('js');if(!/(^|\.)bemfeitosistemas\.com\.br$/.test(location.hostname))h.classList.add('previa');})(document.documentElement);</script>
 <script src="../assets/js/site.js" defer></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://www.bemfeitosistemas.com.br/"}, {"@type": "ListItem", "position": 2, "name": "Integrações", "item": "https://www.bemfeitosistemas.com.br/integracoes/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Preciso trocar o meu ERP?", "acceptedAnswer": {"@type": "Answer", "text": "Não. O sistema novo conversa com o ERP que a empresa já usa. Muitas vezes o melhor caminho é manter o que funciona e construir ao lado só o que falta."}}, {"@type": "Question", "name": "Vocês integram com o sistema que eu uso?", "acceptedAnswer": {"@type": "Answer", "text": "Sempre que o outro sistema permite integração: ERP (TOTVS, SAP, Omie, Bling e outros), sistemas legados, bancos, emissão de notas, financeiro e WhatsApp. Na Imersão, verificamos o que cada sistema permite."}}, {"@type": "Question", "name": "Quanto custa uma integração?", "acceptedAnswer": {"@type": "Answer", "text": "Depende dos sistemas e do que vai ser integrado. O valor sai depois que entendemos o que cada sistema permite e onde a informação nasce."}}, {"@type": "Question", "name": "E se um dos sistemas mudar?", "acceptedAnswer": {"@type": "Answer", "text": "Acompanhamos a integração depois que ela entra no ar e ajustamos quando algum sistema muda."}}]}</script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -47,6 +48,11 @@
   <symbol id="i-360" viewBox="0 0 24 24"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3 M19.5 3.75v4.5H15"/><circle cx="12" cy="10.5" r="2.25"/><path d="M8.25 16.25c.6-1.7 2-2.6 3.75-2.6s3.15.9 3.75 2.6"/></symbol>
   <symbol id="i-esg" viewBox="0 0 24 24"><path d="M5 19.5c0-7.5 4.5-12.5 14.5-14.5-1 9-6 14-14.5 14.5z M5 19.5l7.5-7.5"/></symbol>
   <symbol id="i-banco" viewBox="0 0 24 24"><path d="M3.5 9.5L12 4.5l8.5 5 M5.5 10.5v7 M9.83 10.5v7 M14.17 10.5v7 M18.5 10.5v7 M3.5 19.5h17"/></symbol>
+  <symbol id="i-processo" viewBox="0 0 24 24"><path d="M3.5 4h6v5h-6z M14.5 15h6v5h-6z M6.5 9v8.5h8 M11.5 15l3 2.5-3 2.5"/></symbol>
+  <symbol id="i-sinc" viewBox="0 0 24 24"><path d="M4.5 10a7.5 7.5 0 0 1 13.2-3.6L19.5 8.5 M19.5 4v4.5H15 M19.5 14a7.5 7.5 0 0 1-13.2 3.6L4.5 15.5 M4.5 20v-4.5H9"/></symbol>
+  <symbol id="i-local" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.25"/></symbol>
+  <symbol id="i-celular" viewBox="0 0 24 24"><path d="M7.5 3.5h9v17h-9z M11 17.25h2"/></symbol>
+  <symbol id="i-portal" viewBox="0 0 24 24"><path d="M3.5 5h17v14h-17z M3.5 9h17 M6.5 7h.5 M9 7h.5"/></symbol>
 </svg>
 
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
@@ -110,8 +116,28 @@
     </div>
   </section>
 
+  <!-- Sem integração (primeira versão) -->
+  <section class="secao claro linhas" id="sem-integracao" aria-labelledby="sem-integracao-titulo">
+    <span class="cruz cruz--te" aria-hidden="true"></span><span class="cruz cruz--td" aria-hidden="true"></span>
+    <div class="envolve">
+      <div class="cab">
+        <div class="cab__titulo">
+          <p class="colchete">Sem integração</p>
+          <h2 class="t-secao" id="sem-integracao-titulo">A mesma informação, digitada duas vezes.</h2>
+        </div>
+        <p class="t-grande">Quando os sistemas não conversam, a equipe vira a ponte entre eles.</p>
+      </div>
+      <ul class="sinais" role="list">
+        <li>Pedido digitado no sistema e de novo no ERP.</li>
+        <li>Estoque diferente em cada tela.</li>
+        <li>Relatório montado à mão no fim do mês.</li>
+        <li>Erro de digitação que vira prejuízo.</li>
+      </ul>
+    </div>
+  </section>
+
   <!-- Compatibilidade -->
-  <section class="secao claro linhas integra" id="compatibilidade" aria-labelledby="integra-titulo">
+  <section class="secao claro cinza linhas integra" id="compatibilidade" aria-labelledby="integra-titulo">
     <span class="cruz cruz--te" aria-hidden="true"></span><span class="cruz cruz--td" aria-hidden="true"></span>
     <div class="envolve">
       <div class="cab">
@@ -119,7 +145,7 @@
           <p class="colchete">Compatibilidade</p>
           <h2 class="t-secao" id="integra-titulo">Compatível com o que a sua empresa já usa.</h2>
         </div>
-        <p class="t-grande">ERP, sistemas legados, bancos, emissão de notas, financeiro e WhatsApp. Sem trocar o que funciona e sem digitar a mesma informação duas vezes.</p>
+        <p class="t-grande">ERP, sistemas legados, bancos, emissão de notas, financeiro, WhatsApp, sites e planilhas. Sem trocar o que funciona e sem digitar a mesma informação duas vezes.</p>
       </div>
       <div class="hub" data-hub>
         <svg class="hub__fios" aria-hidden="true" focusable="false"></svg>
@@ -142,7 +168,7 @@
   </section>
 
   <!-- Como fazemos -->
-  <section class="secao claro cinza linhas etapas" id="como-fazemos" aria-labelledby="etapas-titulo">
+  <section class="secao claro linhas etapas" id="como-fazemos" aria-labelledby="etapas-titulo">
     <span class="cruz cruz--te" aria-hidden="true"></span><span class="cruz cruz--td" aria-hidden="true"></span>
     <div class="envolve">
       <div class="cab">
@@ -158,6 +184,37 @@
         <li class="etapa"><p class="etapa__num">03</p><h3>Construção</h3><p>Ligamos os sistemas e testamos com dados reais da operação.</p></li>
         <li class="etapa"><p class="etapa__num">04</p><h3>Evolução</h3><p>Acompanhamos depois que entra no ar e ajustamos quando algo muda.</p></li>
       </ol>
+    </div>
+  </section>
+
+  <!-- Perguntas desta página (saíram da Home em 31/10) -->
+  <section class="secao claro cinza linhas" id="perguntas" aria-labelledby="perguntas-titulo">
+    <span class="cruz cruz--te" aria-hidden="true"></span><span class="cruz cruz--td" aria-hidden="true"></span>
+    <div class="envolve">
+      <div class="cab cab--centro">
+        <div class="cab__titulo">
+          <p class="colchete">Perguntas</p>
+          <h2 class="t-secao" id="perguntas-titulo">Perguntas frequentes</h2>
+        </div>
+      </div>
+      <div class="perguntas">
+        <details class="pergunta" name="perguntas" open>
+          <summary>Preciso trocar o meu ERP?<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+          <div class="pergunta__resp"><p>Não. O sistema novo conversa com o ERP que a empresa já usa. Muitas vezes o melhor caminho é manter o que funciona e construir ao lado só o que falta.</p></div>
+        </details>
+        <details class="pergunta" name="perguntas">
+          <summary>Vocês integram com o sistema que eu uso?<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+          <div class="pergunta__resp"><p>Sempre que o outro sistema permite integração: ERP (TOTVS, SAP, Omie, Bling e outros), sistemas legados, bancos, emissão de notas, financeiro e WhatsApp. Na Imersão, verificamos o que cada sistema permite.</p></div>
+        </details>
+        <details class="pergunta" name="perguntas">
+          <summary>Quanto custa uma integração?<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+          <div class="pergunta__resp"><p>Depende dos sistemas e do que vai ser integrado. O valor sai depois que entendemos o que cada sistema permite e onde a informação nasce.</p></div>
+        </details>
+        <details class="pergunta" name="perguntas">
+          <summary>E se um dos sistemas mudar?<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+          <div class="pergunta__resp"><p>Acompanhamos a integração depois que ela entra no ar e ajustamos quando algum sistema muda.</p></div>
+        </details>
+      </div>
     </div>
   </section>
 
