@@ -506,6 +506,9 @@ img.depoimento__foto { object-fit: cover; padding: 0; }
 .logos li { display: grid; place-items: center; flex: 1 1 200px; min-height: 112px; padding: 20px 28px; border: 1px solid var(--linha); border-radius: var(--raio-3); background: var(--superficie); text-align: center; font-size: .8125rem; }
 .logos img { width: auto; height: 54px; }
 .logos img.logo--alto { height: 70px; }
+/* logo horizontal (Eixo Certo, 05/11): a largura manda, para caber no cartão sem pesar mais que os outros */
+.logos picture { display: contents; } /* a imagem vira o item do cartão e fica centrada nele */
+.logos img.logo--largo { width: min(100%, 220px); height: auto; }
 @media (max-width: 1023px) { .clientes__grade, .clientes__depo { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 520px) { .logos li { min-height: 96px; } .logos img { height: 46px; } .logos img.logo--alto { height: 60px; } }
 
