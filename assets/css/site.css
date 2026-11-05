@@ -446,6 +446,25 @@ p, li, dd { text-wrap: pretty; }
   .construimos > li:last-child:nth-child(odd) { grid-column: 1 / -1; }
 }
 @media (max-width: 640px) { .construimos { grid-template-columns: minmax(0, 1fr); } }
+/* parceiro oficial (integrações, 04/11): o logo é feito para fundo escuro, por isso o quadro escuro */
+.parceiro { display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); align-items: center; gap: clamp(20px, 3vw, 40px); max-width: 880px; margin: clamp(32px, 4vw, 48px) auto 0; padding: 12px; border: 1px solid var(--linha); border-radius: var(--raio-3); background: var(--superficie); }
+.parceiro__logo { display: grid; place-items: center; padding: clamp(18px, 2.4vw, 28px) clamp(20px, 2.8vw, 32px); border-radius: calc(var(--raio-3) - 4px); background: #0b0b0b; }
+.parceiro__logo img { display: block; width: 100%; height: auto; }
+.parceiro__texto { display: grid; gap: 10px; padding-right: 20px; }
+@media (max-width: 640px) { .parceiro { grid-template-columns: minmax(0, 1fr); gap: 16px; } .parceiro__texto { padding: 0 8px 8px; } }
+/* depoimentos em vídeo (parceiros, 04/11): vídeo vertical, só carrega no clique (preload="none") */
+.depoimentos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); max-width: 1040px; margin-inline: auto; }
+.depo { display: grid; align-content: start; gap: 12px; }
+.depo__video { aspect-ratio: 9 / 16; border: 1px solid var(--linha); border-radius: var(--raio-3); overflow: hidden; background: #0b0b0b; }
+.depo__video video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.depo blockquote { margin-top: 6px; font-size: 1rem; line-height: 1.5; font-weight: 500; color: var(--titulo); }
+.depo__nome { font-weight: 600; color: var(--titulo); }
+.depo__cargo { margin-top: -8px; font-size: .875rem; color: var(--texto-suave); }
+@media (max-width: 1023px) { .depoimentos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .depoimentos { grid-template-columns: minmax(0, 1fr); max-width: 400px; } }
+/* foto do depoimento da Home (Clientes): agora é uma imagem */
+img.depoimento__foto { object-fit: cover; padding: 0; }
+.depoimento figcaption a { color: var(--titulo); text-decoration: underline; text-underline-offset: 3px; }
 /* imersão: o que acontece nela */
 .imersao__lista { display: grid; gap: 10px; }
 .imersao__lista li { position: relative; padding-left: 22px; color: var(--texto); }
