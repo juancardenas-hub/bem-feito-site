@@ -105,6 +105,41 @@
     }
   }
 
+  /* Depoimentos da Home: a miniatura abre o vídeo grande numa janela (dialog) e o vídeo já começa a tocar.
+     Fecha no botão, no Esc ou clicando fora do vídeo. Sem suporte a dialog, o link abre o próprio vídeo. */
+  var janela = d.getElementById('depo-modal');
+  if (janela && typeof janela.showModal === 'function') {
+    var video = janela.querySelector('video');
+    var nomeJanela = janela.querySelector('.depo-modal__legenda b');
+    var cargoJanela = janela.querySelector('.depo-modal__legenda span');
+    d.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('[data-depo-video]');
+      if (!a || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button > 0) return; // abrir em outra aba continua valendo
+      e.preventDefault();
+      var nome = a.getAttribute('data-depo-nome') || '';
+      nomeJanela.textContent = nome;
+      var cargo = a.getAttribute('data-depo-cargo') || '';
+      cargoJanela.textContent = cargo ? '· ' + cargo : '';
+      video.setAttribute('poster', a.getAttribute('data-depo-capa') || '');
+      video.setAttribute('aria-label', 'Depoimento em vídeo: ' + nome);
+      video.src = a.getAttribute('data-depo-video');
+      raiz.classList.add('janela-aberta');
+      janela.showModal();
+      var tocar = video.play();
+      if (tocar && tocar.catch) tocar.catch(function () {}); // se o navegador barrar, fica o botão de play do vídeo
+      evento('depoimento_play', { local: a.getAttribute('data-local') || '', depoimento: nome });
+    });
+    janela.querySelector('.depo-modal__fechar').addEventListener('click', function () { janela.close(); });
+    // clique no fundo escuro: o alvo é a própria janela (o conteúdo ocupa só a caixa do vídeo)
+    janela.addEventListener('click', function (e) { if (e.target === janela) janela.close(); });
+    janela.addEventListener('close', function () {
+      video.pause();
+      video.removeAttribute('src');
+      video.load(); // solta o download do vídeo
+      raiz.classList.remove('janela-aberta');
+    });
+  }
+
   /* Movimento (GSAP): carregado só depois da página pronta, para não atrasar o conteúdo nem a fonte. */
   var temGsap = !!(window.gsap && window.ScrollTrigger);
   if (!calmo && !temGsap) {

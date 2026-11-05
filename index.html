@@ -53,6 +53,7 @@
   <symbol id="i-local" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.25"/></symbol>
   <symbol id="i-celular" viewBox="0 0 24 24"><path d="M7.5 3.5h9v17h-9z M11 17.25h2"/></symbol>
   <symbol id="i-portal" viewBox="0 0 24 24"><path d="M3.5 5h17v14h-17z M3.5 9h17 M6.5 7h.5 M9 7h.5"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8.5 5.75v12.5L18.5 12z"/></symbol>
 </svg>
 
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
@@ -65,8 +66,10 @@
       </a>
       <nav class="nav" aria-label="Principal">
         <ul role="list">
-          <li><a href="#solucoes">Soluções</a></li>
           <li><a href="#metodo">Como trabalhamos</a></li>
+          <li><a href="sob-medida/">Sob medida</a></li>
+          <li><a href="integracoes/">Integrações</a></li>
+          <li><a href="parceiros/">Parceiros</a></li>
           <li><a href="#clientes">Clientes</a></li>
         </ul>
       </nav>
@@ -81,8 +84,10 @@
 <div class="menu" id="menu" hidden>
   <nav aria-label="Menu">
     <ul role="list">
-          <li><a href="#solucoes">Soluções <svg class="i" aria-hidden="true"><use href="#i-seta"/></svg></a></li>
           <li><a href="#metodo">Como trabalhamos <svg class="i" aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+          <li><a href="sob-medida/">Sob medida <svg class="i" aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+          <li><a href="integracoes/">Integrações <svg class="i" aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+          <li><a href="parceiros/">Parceiros <svg class="i" aria-hidden="true"><use href="#i-seta"/></svg></a></li>
           <li><a href="#clientes">Clientes <svg class="i" aria-hidden="true"><use href="#i-seta"/></svg></a></li>
     </ul>
   </nav>
@@ -198,7 +203,7 @@
     </div>
   </section>
 
-  <!-- 3. Clientes: logos no ar; o depoimento e o logo da Eixo Forte entram quando chegarem -->
+  <!-- 3. Clientes: logos, a frase do Rodrigo e os três depoimentos em vídeo (pequenos; abrem grandes no clique) -->
   <section class="secao claro cinza clientes linhas" id="clientes" aria-labelledby="clientes-titulo">
     <div class="envolve clientes__grade">
       <div class="clientes__cab">
@@ -210,14 +215,65 @@
         <li><picture><source type="image/webp" srcset="assets/img/clientes/paraquedas-consultoria-esg.webp"><img class="logo--alto" src="assets/img/clientes/paraquedas-consultoria-esg.png" width="309" height="192" alt="Paraquedas Consultoria ESG" loading="lazy" decoding="async"></picture></li>
         <li class="so-previa"><span class="falta">[FALTA: logo Eixo Forte]</span></li>
       </ul>
-      <!-- Depoimento (04/11): frase do Rodrigo, tirada do vídeo; os três vídeos estão em Parceiros -->
-      <figure class="depoimento">
-        <img class="depoimento__foto" src="assets/img/depoimentos/rodrigo-camilo.jpg" alt="" width="160" height="160" loading="lazy" decoding="async">
-        <blockquote><p>“A certificação era feita com formulários e planilhas no Excel, e era bastante trabalhoso. Este ano veio a nova plataforma, interativa e fácil de utilizar, que facilitou bastante o nosso trabalho como gestores de sustentabilidade.”</p></blockquote>
-        <figcaption>Prof. Rodrigo Camilo, Universidade Estadual de Maringá (UEM) · <a href="parceiros/#depoimentos">Ver os depoimentos em vídeo</a> <span class="falta">[FALTA: confirmar com o Rafael: a plataforma do Selo Impactacim é da Bem-Feito e os três autorizaram o uso no site]</span></figcaption>
-      </figure>
+      <div class="clientes__depo">
+        <!-- Depoimento (04/11): frase do Rodrigo, tirada do vídeo -->
+        <figure class="depoimento">
+          <img class="depoimento__foto" src="assets/img/depoimentos/rodrigo-camilo.jpg" alt="" width="160" height="160" loading="lazy" decoding="async">
+          <blockquote><p>“A certificação era feita com formulários e planilhas no Excel, e era bastante trabalhoso. Este ano veio a nova plataforma, interativa e fácil de utilizar, que facilitou bastante o nosso trabalho como gestores de sustentabilidade.”</p></blockquote>
+          <figcaption>Prof. Rodrigo Camilo, Universidade Estadual de Maringá (UEM) <span class="falta">[FALTA: confirmar com o Rafael: a plataforma do Selo Impactacim é da Bem-Feito e os três autorizaram o uso no site]</span></figcaption>
+        </figure>
+        <div class="depo-mini">
+          <div class="depo-mini__cab">
+            <p class="colchete">Depoimentos em vídeo</p>
+            <p class="depo-mini__contexto">Selo Impactacim, a certificação ODS do Instituto ACIM.</p>
+          </div>
+          <ul class="depo-mini__lista" role="list">
+          <li>
+            <a class="depo-mini__item" href="assets/video/depoimentos/rodrigo.mp4" data-depo-video="assets/video/depoimentos/rodrigo.mp4" data-depo-capa="assets/video/depoimentos/rodrigo-capa.jpg" data-depo-nome="Prof. Rodrigo Camilo" data-depo-cargo="Universidade Estadual de Maringá (UEM)" data-local="home-clientes" aria-label="Depoimento em vídeo: Prof. Rodrigo Camilo, UEM, 1:03">
+              <span class="depo-mini__capa">
+                <picture><source type="image/webp" srcset="assets/video/depoimentos/rodrigo-mini.webp"><img src="assets/video/depoimentos/rodrigo-mini.jpg" width="360" height="640" alt="" loading="lazy" decoding="async"></picture>
+                <span class="depo-mini__play" aria-hidden="true"><svg class="i i--cheio"><use href="#i-play"/></svg></span>
+                <span class="depo-mini__tempo" aria-hidden="true">1:03</span>
+              </span>
+              <span class="depo-mini__nome">Prof. Rodrigo Camilo</span>
+              <span class="depo-mini__cargo">UEM</span>
+            </a>
+          </li>
+          <li>
+            <a class="depo-mini__item" href="assets/video/depoimentos/max.mp4" data-depo-video="assets/video/depoimentos/max.mp4" data-depo-capa="assets/video/depoimentos/max-capa.jpg" data-depo-nome="Maximiliam de Freitas" data-depo-cargo="Supervisor Ambiental da Unicesumar" data-local="home-clientes" aria-label="Depoimento em vídeo: Maximiliam de Freitas, Unicesumar, 1:36">
+              <span class="depo-mini__capa">
+                <picture><source type="image/webp" srcset="assets/video/depoimentos/max-mini.webp"><img src="assets/video/depoimentos/max-mini.jpg" width="360" height="640" alt="" loading="lazy" decoding="async"></picture>
+                <span class="depo-mini__play" aria-hidden="true"><svg class="i i--cheio"><use href="#i-play"/></svg></span>
+                <span class="depo-mini__tempo" aria-hidden="true">1:36</span>
+              </span>
+              <span class="depo-mini__nome">Maximiliam de Freitas</span>
+              <span class="depo-mini__cargo">Unicesumar</span>
+            </a>
+          </li>
+          <li>
+            <a class="depo-mini__item" href="assets/video/depoimentos/jeronimo.mp4" data-depo-video="assets/video/depoimentos/jeronimo.mp4" data-depo-capa="assets/video/depoimentos/jeronimo-capa.jpg" data-depo-nome="Jerônimo Schimiti" data-depo-cargo="Biólogo, formador e auditor do Selo Impactacim" data-local="home-clientes" aria-label="Depoimento em vídeo: Jerônimo Schimiti, Auditor do Selo Impactacim, 0:55">
+              <span class="depo-mini__capa">
+                <picture><source type="image/webp" srcset="assets/video/depoimentos/jeronimo-mini.webp"><img src="assets/video/depoimentos/jeronimo-mini.jpg" width="360" height="640" alt="" loading="lazy" decoding="async"></picture>
+                <span class="depo-mini__play" aria-hidden="true"><svg class="i i--cheio"><use href="#i-play"/></svg></span>
+                <span class="depo-mini__tempo" aria-hidden="true">0:55</span>
+              </span>
+              <span class="depo-mini__nome">Jerônimo Schimiti</span>
+              <span class="depo-mini__cargo">Auditor do Selo Impactacim</span>
+            </a> <span class="falta">[FALTA: confirmar o sobrenome]</span>
+          </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
+  <!-- janela do vídeo (site.js): abre por cima da página; fecha no botão, no Esc ou clicando fora do vídeo -->
+  <dialog class="depo-modal escuro" id="depo-modal" aria-labelledby="depo-modal-nome">
+    <div class="depo-modal__caixa">
+      <button class="depo-modal__fechar" type="button" autofocus><span>Fechar</span><svg class="i" aria-hidden="true"><use href="#i-fechar"/></svg></button>
+      <video class="depo-modal__video" controls playsinline preload="none" width="720" height="1280"></video>
+      <p class="depo-modal__legenda"><b id="depo-modal-nome">Depoimento em vídeo</b> <span></span></p>
+    </div>
+  </dialog>
 
   <!-- 4. Próximo passo (uma linha só). As perguntas frequentes saíram por enquanto (pedido do Rafael em 31/10). -->
   <section class="proximo linhas" id="proximo-passo" aria-labelledby="proximo-titulo">
@@ -276,7 +332,7 @@
     </div>
     <div class="rodape__base">
       <p>© 2026 Bem-Feito Sistemas Ltda. · CNPJ 58.948.355/0001-97</p>
-      <p class="so-previa"><span class="falta">[FALTA: página de privacidade, antes de ligar o GA4 e o pixel]</span></p>
+      <p><a href="privacidade/">Política de Privacidade</a></p>
     </div>
   </div>
 </footer>
