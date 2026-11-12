@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" font-family="'Host Grotesk', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <radialGradient id="sombra" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3a3d"/><stop offset="1" stop-color="#1f1f21"/></linearGradient>
+    <clipPath id="tela"><rect x="80" y="30" width="480" height="314" rx="5"/></clipPath>
+  </defs>
+  <ellipse cx="320" cy="374" rx="290" ry="16" fill="url(#sombra)"/>
+  <rect x="70" y="18" width="500" height="338" rx="16" fill="#1b1b1d" stroke="#343437" stroke-width="1.5"/>
+  <circle cx="320" cy="24.5" r="2" fill="#3c3c40"/>
+  <g clip-path="url(#tela)">
+    <rect x="80" y="30" width="480" height="314" fill="#f6f5f2"/>
+    <rect x="80" y="30" width="480" height="30" fill="#141414"/>
+    <rect x="92" y="38" width="14" height="14" rx="3.5" fill="#1f7a8c"/>
+    <text x="114" y="49.5" font-size="11" font-weight="600" fill="#f4f3f0" text-anchor="start">Sua consultoria · Ouvidoria</text>
+    <rect x="428" y="39" width="92" height="12" rx="6" fill="#2a2a2c"/>
+    <circle cx="540" cy="45" r="7" fill="#3a3a3d"/>
+    <rect x="80" y="60" width="96" height="284" fill="#eceae5"/>
+    <rect x="95" y="74" width="10" height="10" rx="2.5" fill="#cfccc4"/><rect x="111" y="77" width="30" height="5" rx="2.5" fill="#d9d6cf"/><rect x="88" y="95" width="76" height="22" rx="6" fill="#d7eef2"/><rect x="95" y="101" width="10" height="10" rx="2.5" fill="#1f7a8c"/><rect x="111" y="104" width="42" height="5" rx="2.5" fill="#7fb8c4"/><rect x="95" y="128" width="10" height="10" rx="2.5" fill="#cfccc4"/><rect x="111" y="131" width="44" height="5" rx="2.5" fill="#d9d6cf"/><rect x="95" y="155" width="10" height="10" rx="2.5" fill="#cfccc4"/><rect x="111" y="158" width="33" height="5" rx="2.5" fill="#d9d6cf"/><rect x="95" y="182" width="10" height="10" rx="2.5" fill="#cfccc4"/><rect x="111" y="185" width="40" height="5" rx="2.5" fill="#d9d6cf"/><rect x="95" y="209" width="10" height="10" rx="2.5" fill="#cfccc4"/><rect x="111" y="212" width="47" height="5" rx="2.5" fill="#d9d6cf"/>
+    <text x="188" y="84" font-size="14" font-weight="600" fill="#0b0b0b" text-anchor="start">Relatos</text>
+    <rect x="464" y="71" width="82" height="19" rx="9.5" fill="#1f7a8c"/>
+    <text x="505" y="83.5" font-size="8.5" font-weight="600" fill="#ffffff" text-anchor="middle">+ Novo relato</text>
+    <rect x="188.0" y="100" width="114.0" height="46" rx="7" fill="#ffffff" stroke="#e6e4de"/>
+    <text x="198.0" y="116" font-size="8" font-weight="500" fill="#5e5b56" text-anchor="start">Recebidos</text>
+    <text x="198.0" y="137" font-size="17" font-weight="600" fill="#0b0b0b" text-anchor="start">12</text>
+    <rect x="310.0" y="100" width="114.0" height="46" rx="7" fill="#ffffff" stroke="#e6e4de"/>
+    <text x="320.0" y="116" font-size="8" font-weight="500" fill="#5e5b56" text-anchor="start">Em análise</text>
+    <text x="320.0" y="137" font-size="17" font-weight="600" fill="#1f7a8c" text-anchor="start">5</text>
+    <rect x="432.0" y="100" width="114.0" height="46" rx="7" fill="#ffffff" stroke="#e6e4de"/>
+    <text x="442.0" y="116" font-size="8" font-weight="500" fill="#5e5b56" text-anchor="start">Concluídos</text>
+    <text x="442.0" y="137" font-size="17" font-weight="600" fill="#0b0b0b" text-anchor="start">27</text>
+    <text x="190" y="164" font-size="7.5" font-weight="600" fill="#5e5b56" text-anchor="start">Protocolo</text>
+    <text x="258" y="164" font-size="7.5" font-weight="600" fill="#5e5b56" text-anchor="start">Assunto</text>
+    <text x="544" y="164" font-size="7.5" font-weight="600" fill="#5e5b56" text-anchor="end">Andamento</text>
+    <rect x="188" y="172" width="358" height="24" rx="5" fill="#ffffff" stroke="#ebe9e4"/>
+    <text x="198" y="187.5" font-size="8.5" font-weight="600" fill="#5e5b56" text-anchor="start">#0142</text>
+    <rect x="258" y="181" width="120" height="6" rx="3.0" fill="#dcdad3"/>
+    <rect x="476" y="176.5" width="62" height="15" rx="7.5" fill="#d7eef2"/><text x="507.0" y="187.0" font-size="8" font-weight="600" fill="#145a68" text-anchor="middle">Em análise</text>
+    <rect x="188" y="201" width="358" height="24" rx="5" fill="#ffffff" stroke="#ebe9e4"/>
+    <text x="198" y="216.5" font-size="8.5" font-weight="600" fill="#5e5b56" text-anchor="start">#0141</text>
+    <rect x="258" y="210" width="92" height="6" rx="3.0" fill="#dcdad3"/>
+    <rect x="476" y="205.5" width="62" height="15" rx="7.5" fill="#e7e5e0"/><text x="507.0" y="216.0" font-size="8" font-weight="600" fill="#5e5b56" text-anchor="middle">Recebido</text>
+    <rect x="188" y="230" width="358" height="24" rx="5" fill="#ffffff" stroke="#ebe9e4"/>
+    <text x="198" y="245.5" font-size="8.5" font-weight="600" fill="#5e5b56" text-anchor="start">#0139</text>
+    <rect x="258" y="239" width="136" height="6" rx="3.0" fill="#dcdad3"/>
+    <rect x="476" y="234.5" width="62" height="15" rx="7.5" fill="#e2efe4"/><text x="507.0" y="245.0" font-size="8" font-weight="600" fill="#2f7a45" text-anchor="middle">Concluído</text>
+    <rect x="188" y="259" width="358" height="24" rx="5" fill="#ffffff" stroke="#ebe9e4"/>
+    <text x="198" y="274.5" font-size="8.5" font-weight="600" fill="#5e5b56" text-anchor="start">#0137</text>
+    <rect x="258" y="268" width="104" height="6" rx="3.0" fill="#dcdad3"/>
+    <rect x="476" y="263.5" width="62" height="15" rx="7.5" fill="#e2efe4"/><text x="507.0" y="274.0" font-size="8" font-weight="600" fill="#2f7a45" text-anchor="middle">Concluído</text>
+    <rect x="188" y="294" width="196" height="24" rx="6" fill="#141414"/>
+    <g fill="none" stroke="#5fb3c4" stroke-width="1.6" stroke-linecap="round"><rect x="197" y="303" width="10" height="8" rx="1.5"/><path d="M199.5 303v-2a2.5 2.5 0 0 1 5 0v2"/></g>
+    <text x="215" y="309.5" font-size="8.5" font-weight="500" fill="#f4f3f0" text-anchor="start">Sigilo do denunciante garantido</text>
+  </g>
+  <path d="M30 356H610l-8 10.5c-2.6 3.3-6.4 5.5-10.6 5.5H48.6c-4.2 0-8-2.2-10.6-5.5z" fill="url(#base)"/>
+  <rect x="282" y="356" width="76" height="5" rx="2.5" fill="#18181a"/>
+</svg>

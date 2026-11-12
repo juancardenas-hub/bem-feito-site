@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" font-family="'Host Grotesk', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <radialGradient id="sombra" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3a3d"/><stop offset="1" stop-color="#1f1f21"/></linearGradient>
+    <clipPath id="tela"><rect x="80" y="30" width="480" height="314" rx="5"/></clipPath>
+  </defs>
+  <ellipse cx="320" cy="374" rx="290" ry="16" fill="url(#sombra)"/>
+  <rect x="70" y="18" width="500" height="338" rx="16" fill="#1b1b1d" stroke="#343437" stroke-width="1.5"/>
+  <circle cx="320" cy="24.5" r="2" fill="#3c3c40"/>
+  <g clip-path="url(#tela)">
+    <rect x="80" y="30" width="480" height="314" fill="#f6f5f2"/>
+    <rect x="80" y="30" width="480" height="30" fill="#141414"/>
+    <rect x="92" y="38" width="14" height="14" rx="3.5" fill="#ec7000"/>
+    <text x="114" y="49.5" font-size="11" font-weight="600" fill="#f4f3f0" text-anchor="start">Indicadores ESG</text>
+    <rect x="428" y="39" width="92" height="12" rx="6" fill="#2a2a2c"/>
+    <circle cx="540" cy="45" r="7" fill="#3a3a3d"/>
+    <rect x="80" y="60" width="96" height="284" fill="#eceae5"/>
+    <rect x="95" y="74" width="10" height="10" rx="2.5" fill="#cfccc4"/><rect x="111" y="77" width="30" height="5" rx="2.5" fill="#d9d6cf"/><rect x="88" y="95" width="76" height="22" rx="6" fill="#ffe6cf"/><rect x="95" y="101" width="10" height="10" rx="2.5" fill="#ec7000"/><rect x="111" y="104" width="42" height="5" rx="2.5" fill="#f0a35e"/><rect x="95" y="128" width="10" height="10" rx="2.5" fill="#cfccc4"/><rect x="111" y="131" width="44" height="5" rx="2.5" fill="#d9d6cf"/><rect x="95" y="155" width="10" height="10" rx="2.5" fill="#cfccc4"/><rect x="111" y="158" width="33" height="5" rx="2.5" fill="#d9d6cf"/><rect x="95" y="182" width="10" height="10" rx="2.5" fill="#cfccc4"/><rect x="111" y="185" width="40" height="5" rx="2.5" fill="#d9d6cf"/><rect x="95" y="209" width="10" height="10" rx="2.5" fill="#cfccc4"/><rect x="111" y="212" width="47" height="5" rx="2.5" fill="#d9d6cf"/>
+    <text x="188" y="84" font-size="14" font-weight="600" fill="#0b0b0b" text-anchor="start">Indicadores ESG</text>
+    <rect x="470" y="71" width="76" height="19" rx="9.5" fill="none" stroke="#ec7000"/>
+    <text x="508" y="83.5" font-size="8.5" font-weight="600" fill="#a84300" text-anchor="middle">Projetos ativos</text>
+    <rect x="188.0" y="100" width="114.0" height="68" rx="7" fill="#ffffff" stroke="#e6e4de"/>
+    <circle cx="214.0" cy="134" r="15" fill="none" stroke="#ebe9e4" stroke-width="5"/>
+    <circle cx="214.0" cy="134" r="15" fill="none" stroke="#ec7000" stroke-width="5" stroke-linecap="round" stroke-dasharray="67.9 94.2" transform="rotate(-90 214.0 134)"/>
+    <text x="214.0" y="138" font-size="11" font-weight="700" fill="#0b0b0b" text-anchor="middle">E</text>
+    <text x="238.0" y="128" font-size="8.5" font-weight="500" fill="#5e5b56" text-anchor="start">Ambiental</text>
+    <text x="238.0" y="146" font-size="15" font-weight="600" fill="#0b0b0b" text-anchor="start">72%</text>
+    <rect x="310.0" y="100" width="114.0" height="68" rx="7" fill="#ffffff" stroke="#e6e4de"/>
+    <circle cx="336.0" cy="134" r="15" fill="none" stroke="#ebe9e4" stroke-width="5"/>
+    <circle cx="336.0" cy="134" r="15" fill="none" stroke="#ec7000" stroke-width="5" stroke-linecap="round" stroke-dasharray="54.7 94.2" transform="rotate(-90 336.0 134)"/>
+    <text x="336.0" y="138" font-size="11" font-weight="700" fill="#0b0b0b" text-anchor="middle">S</text>
+    <text x="360.0" y="128" font-size="8.5" font-weight="500" fill="#5e5b56" text-anchor="start">Social</text>
+    <text x="360.0" y="146" font-size="15" font-weight="600" fill="#0b0b0b" text-anchor="start">58%</text>
+    <rect x="432.0" y="100" width="114.0" height="68" rx="7" fill="#ffffff" stroke="#e6e4de"/>
+    <circle cx="458.0" cy="134" r="15" fill="none" stroke="#ebe9e4" stroke-width="5"/>
+    <circle cx="458.0" cy="134" r="15" fill="none" stroke="#ec7000" stroke-width="5" stroke-linecap="round" stroke-dasharray="79.2 94.2" transform="rotate(-90 458.0 134)"/>
+    <text x="458.0" y="138" font-size="11" font-weight="700" fill="#0b0b0b" text-anchor="middle">G</text>
+    <text x="482.0" y="128" font-size="8.5" font-weight="500" fill="#5e5b56" text-anchor="start">Governança</text>
+    <text x="482.0" y="146" font-size="15" font-weight="600" fill="#0b0b0b" text-anchor="start">84%</text>
+    <rect x="188" y="178" width="168" height="140" rx="7" fill="#ffffff" stroke="#e6e4de"/>
+    <text x="200" y="196" font-size="8.5" font-weight="600" fill="#5e5b56" text-anchor="start">Ações por mês</text>
+    <rect x="204" y="264" width="15" height="38" rx="3" fill="#f0a35e"/>
+    <rect x="229" y="248" width="15" height="54" rx="3" fill="#f0a35e"/>
+    <rect x="254" y="256" width="15" height="46" rx="3" fill="#f0a35e"/>
+    <rect x="279" y="232" width="15" height="70" rx="3" fill="#f0a35e"/>
+    <rect x="304" y="240" width="15" height="62" rx="3" fill="#f0a35e"/>
+    <rect x="329" y="216" width="15" height="86" rx="3" fill="#ec7000"/>
+    <line x1="200" y1="302.5" x2="344" y2="302.5" stroke="#dcdad3"/>
+    <rect x="366" y="178" width="180" height="140" rx="7" fill="#ffffff" stroke="#e6e4de"/>
+    <text x="378" y="196" font-size="8.5" font-weight="600" fill="#5e5b56" text-anchor="start">Projetos</text>
+    <rect x="378" y="210" width="70" height="5" rx="2.5" fill="#d6d4cd"/>
+    <rect x="378" y="220" width="156" height="6" rx="3.0" fill="#ebe9e4"/>
+    <rect x="378" y="220" width="124.80000000000001" height="6" rx="3.0" fill="#ec7000"/>
+    <rect x="378" y="236" width="87" height="5" rx="2.5" fill="#d6d4cd"/>
+    <rect x="378" y="246" width="156" height="6" rx="3.0" fill="#ebe9e4"/>
+    <rect x="378" y="246" width="85.80000000000001" height="6" rx="3.0" fill="#ec7000"/>
+    <rect x="378" y="262" width="104" height="5" rx="2.5" fill="#d6d4cd"/>
+    <rect x="378" y="272" width="156" height="6" rx="3.0" fill="#ebe9e4"/>
+    <rect x="378" y="272" width="143.52" height="6" rx="3.0" fill="#ec7000"/>
+    <rect x="378" y="288" width="81" height="5" rx="2.5" fill="#d6d4cd"/>
+    <rect x="378" y="298" width="156" height="6" rx="3.0" fill="#ebe9e4"/>
+    <rect x="378" y="298" width="62.400000000000006" height="6" rx="3.0" fill="#ec7000"/>
+  </g>
+  <path d="M30 356H610l-8 10.5c-2.6 3.3-6.4 5.5-10.6 5.5H48.6c-4.2 0-8-2.2-10.6-5.5z" fill="url(#base)"/>
+  <rect x="282" y="356" width="76" height="5" rx="2.5" fill="#18181a"/>
+</svg>

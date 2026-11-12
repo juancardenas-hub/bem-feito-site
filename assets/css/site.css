@@ -274,7 +274,8 @@ p, li, dd { text-wrap: pretty; }
 .fluxo__no + .fluxo__no::before { content: ""; position: absolute; top: 50%; right: 100%; width: var(--vao); height: 1px; background: var(--borda); }
 .fluxo__no + .fluxo__no::after { content: ""; position: absolute; top: calc(50% - 4px); right: calc(100% + 2px); width: 8px; height: 8px; border-top: 1px solid var(--borda); border-right: 1px solid var(--borda); transform: rotate(45deg); }
 /* o laço da evolução: do sistema de volta ao processo */
-.fluxo__laco { position: absolute; z-index: 3; left: calc((100% - 4 * var(--vao)) / 10); right: calc((100% - 4 * var(--vao)) / 10); top: calc(100% - 104px); height: 66px; border: 1px solid var(--borda); border-top: 0; border-radius: 0 0 22px 22px; pointer-events: none; transition: border-color .5s; }
+/* a evolução (04) volta para a Imersão (01), não para o processo de hoje (Rafael, 10/11): o laço sai do centro da 2ª coluna */
+.fluxo__laco { position: absolute; z-index: 3; left: calc(3 * (100% - 4 * var(--vao)) / 10 + var(--vao)); right: calc((100% - 4 * var(--vao)) / 10); top: calc(100% - 104px); height: 66px; border: 1px solid var(--borda); border-top: 0; border-radius: 0 0 22px 22px; pointer-events: none; transition: border-color .5s; }
 .fluxo__laco::before { content: ""; position: absolute; left: -4.5px; top: 3px; width: 8px; height: 8px; border-left: 1px solid var(--borda); border-top: 1px solid var(--borda); transform: rotate(45deg); transition: border-color .5s; }
 .fluxo__laco p { position: absolute; left: 50%; bottom: 0; transform: translate(-50%, 50%); display: flex; align-items: center; gap: 14px; padding: 15px 28px; border: 1px solid rgba(var(--laranja-rgb), .5); border-radius: 999px; background: linear-gradient(180deg, rgba(var(--laranja-rgb), .16), rgba(var(--laranja-rgb), .05)), #111; box-shadow: 0 0 0 6px #0b0b0b, 0 16px 44px -12px rgba(var(--laranja-rgb), .5); font-size: clamp(1rem, .9rem + .3vw, 1.1875rem); line-height: 1.3; font-weight: 500; color: var(--titulo); white-space: nowrap; transition: border-color .5s; }
 .fluxo__laco .i { width: 22px; height: 22px; color: var(--laranja-sinal); }
@@ -364,6 +365,9 @@ p, li, dd { text-wrap: pretty; }
 .hub__tag::before { content: ""; width: 7px; height: 7px; background: var(--laranja); }
 .hub__titulo { margin-top: 4px; font-size: 1.625rem; line-height: 1.15; font-weight: 500; letter-spacing: -.02em; color: var(--titulo); }
 .hub__txt { max-width: 15em; font-size: .875rem; line-height: 1.45; color: var(--texto); }
+/* selo de IA dentro de "Seu sistema" (10/11) */
+.hub__ia { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; padding: 6px 12px; border: 1px solid rgba(var(--laranja-rgb), .45); border-radius: 999px; background: rgba(var(--laranja-rgb), .1); font-size: .75rem; line-height: 1.2; font-weight: 600; letter-spacing: .02em; color: var(--titulo); white-space: nowrap; }
+.hub__ia .i { width: 14px; height: 14px; color: var(--laranja-sinal); }
 /* fios e pontos desenhados pelo site.js a partir das posições reais */
 .hub__fios { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
 .hub__fios path { fill: none; stroke: var(--borda); stroke-width: 1; }
@@ -444,6 +448,8 @@ p, li, dd { text-wrap: pretty; }
 .construimos { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
 .construimos > li { grid-column: span 2; }
 .construimos > li:nth-child(n+4) { grid-column: span 3; }
+/* com 6 cartões (IA entrou em 10/11), duas linhas de 3 */
+.construimos--6 > li, .construimos--6 > li:nth-child(n+4) { grid-column: span 2; }
 @media (max-width: 1023px) {
   .construimos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .construimos > li, .construimos > li:nth-child(n+4) { grid-column: auto; }
@@ -455,6 +461,7 @@ p, li, dd { text-wrap: pretty; }
 .parceiro__logo { display: grid; place-items: center; padding: clamp(18px, 2.4vw, 28px) clamp(20px, 2.8vw, 32px); border-radius: calc(var(--raio-3) - 4px); background: #0b0b0b; }
 .parceiro__logo img { display: block; width: 100%; height: auto; }
 .parceiro__texto { display: grid; gap: 10px; padding-right: 20px; }
+.parceiro--solo { margin-top: 0; }
 @media (max-width: 640px) { .parceiro { grid-template-columns: minmax(0, 1fr); gap: 16px; } .parceiro__texto { padding: 0 8px 8px; } }
 /* depoimentos em vídeo (parceiros, 04/11): vídeo vertical, só carrega no clique (preload="none") */
 .depoimentos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); max-width: 1040px; margin-inline: auto; }
@@ -479,10 +486,20 @@ img.depoimento__foto { object-fit: cover; padding: 0; }
 .plataformas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .plataforma { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; padding: 26px; border: 1px solid var(--linha); border-radius: var(--raio-3); background: var(--superficie); box-shadow: 0 28px 60px -30px rgba(11, 11, 11, .55); }
 .plataforma__tela { align-self: stretch; display: grid; place-items: center; aspect-ratio: 16 / 10; padding: 16px; border: 1px dashed var(--borda); border-radius: var(--raio-2); text-align: center; }
+/* tela ilustrada (10/11): o notebook sobre um fundo escuro com um brilho laranja embaixo */
+.plataforma__tela--ilustracao { padding: 0; border: 0; overflow: hidden; background: radial-gradient(80% 70% at 50% 100%, rgba(var(--laranja-rgb), .16), rgba(var(--laranja-rgb), 0) 70%), #0f0f0f; }
+.plataforma__tela--ilustracao img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.marcas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: clamp(28px, 3vw, 40px); }
+.marcas__item { display: grid; align-content: start; gap: 12px; margin: 0; }
+.marcas__item .plataforma__tela { align-self: start; }
+.marcas__item .plataforma__tela { aspect-ratio: 16 / 10; border-radius: var(--raio-3); }
+.marcas__item figcaption { font-size: .9375rem; line-height: 1.5; color: var(--texto-suave); }
+@media (max-width: 760px) { .marcas { grid-template-columns: minmax(0, 1fr); } }
 .plataforma__cab { display: flex; align-items: center; gap: 16px; }
 .plataforma p { color: var(--texto); }
 .plataforma .btn { margin-top: auto; }
-.modelos { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 16px; }
+/* sem a lista dos três modos (10/11), os dois cartões ficam do mesmo tamanho */
+.modelos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .modelo { display: grid; align-content: start; gap: 14px; padding: clamp(24px, 3vw, 36px); border: 1px solid var(--linha); border-radius: var(--raio-3); background: var(--superficie); }
 .modelo p { color: var(--texto); }
 .modelo__formas { display: grid; gap: 10px; margin-top: 4px; counter-reset: forma; }
@@ -562,6 +579,10 @@ img.depoimento__foto { object-fit: cover; padding: 0; }
 .pergunta[open] summary .i { transform: rotate(180deg); color: var(--laranja-sinal); }
 .pergunta__resp { display: grid; gap: 10px; max-width: 64ch; padding: 0 20px 22px; color: var(--texto); }
 .pergunta__resp a { color: var(--titulo); font-weight: 600; text-underline-offset: 3px; }
+
+/* o nome da empresa no texto, como no logo (Rafael, 10/11): branco no escuro, preto no claro, traço laranja */
+.nome-marca { font-weight: 600; color: var(--titulo); white-space: nowrap; }
+.nome-marca__traco { color: var(--laranja-sinal); } /* o laranja de texto de cada fundo: legível no claro e no escuro */
 
 /* ---------- política de privacidade (05/11): índice fixo ao lado do texto ---------- */
 .doc-heroi { padding-bottom: clamp(96px, 9vw, 136px); }

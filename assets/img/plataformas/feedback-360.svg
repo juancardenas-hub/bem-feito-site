@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" font-family="'Host Grotesk', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <radialGradient id="sombra" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3a3d"/><stop offset="1" stop-color="#1f1f21"/></linearGradient>
+    <clipPath id="tela"><rect x="80" y="30" width="480" height="314" rx="5"/></clipPath>
+  </defs>
+  <ellipse cx="320" cy="374" rx="290" ry="16" fill="url(#sombra)"/>
+  <rect x="70" y="18" width="500" height="338" rx="16" fill="#1b1b1d" stroke="#343437" stroke-width="1.5"/>
+  <circle cx="320" cy="24.5" r="2" fill="#3c3c40"/>
+  <g clip-path="url(#tela)">
+    <rect x="80" y="30" width="480" height="314" fill="#f6f5f2"/>
+    <rect x="80" y="30" width="480" height="30" fill="#141414"/>
+    <rect x="92" y="38" width="14" height="14" rx="3.5" fill="#ec7000"/>
+    <text x="114" y="49.5" font-size="11" font-weight="600" fill="#f4f3f0" text-anchor="start">Feedback 360</text>
+    <rect x="428" y="39" width="92" height="12" rx="6" fill="#2a2a2c"/>
+    <circle cx="540" cy="45" r="7" fill="#3a3a3d"/>
+    <rect x="80" y="60" width="96" height="284" fill="#eceae5"/>
+    <rect x="95" y="74" width="10" height="10" rx="2.5" fill="#cfccc4"/><rect x="111" y="77" width="30" height="5" rx="2.5" fill="#d9d6cf"/><rect x="88" y="95" width="76" height="22" rx="6" fill="#ffe6cf"/><rect x="95" y="101" width="10" height="10" rx="2.5" fill="#ec7000"/><rect x="111" y="104" width="42" height="5" rx="2.5" fill="#f0a35e"/><rect x="95" y="128" width="10" height="10" rx="2.5" fill="#cfccc4"/><rect x="111" y="131" width="44" height="5" rx="2.5" fill="#d9d6cf"/><rect x="95" y="155" width="10" height="10" rx="2.5" fill="#cfccc4"/><rect x="111" y="158" width="33" height="5" rx="2.5" fill="#d9d6cf"/><rect x="95" y="182" width="10" height="10" rx="2.5" fill="#cfccc4"/><rect x="111" y="185" width="40" height="5" rx="2.5" fill="#d9d6cf"/><rect x="95" y="209" width="10" height="10" rx="2.5" fill="#cfccc4"/><rect x="111" y="212" width="47" height="5" rx="2.5" fill="#d9d6cf"/>
+    <text x="188" y="84" font-size="14" font-weight="600" fill="#0b0b0b" text-anchor="start">Avaliação 360°</text>
+    <rect x="476" y="71" width="70" height="19" rx="9.5" fill="none" stroke="#ec7000"/>
+    <text x="511" y="83.5" font-size="8.5" font-weight="600" fill="#a84300" text-anchor="middle">Ciclo atual</text>
+    <rect x="188" y="100" width="104" height="132" rx="7" fill="#ffffff" stroke="#e6e4de"/>
+    <circle cx="240" cy="130" r="17" fill="#ebe9e4"/>
+    <circle cx="240" cy="125" r="6" fill="#bdb9b0"/><path d="M229 142a11 9 0 0 1 22 0" fill="#bdb9b0"/>
+    <rect x="210" y="156" width="60" height="6" rx="3.0" fill="#dcdad3"/>
+    <rect x="220" y="168" width="40" height="5" rx="2.5" fill="#e6e4de"/>
+    <text x="240" y="202" font-size="20" font-weight="600" fill="#ec7000" text-anchor="middle">8,7</text>
+    <text x="240" y="218" font-size="8" font-weight="500" fill="#5e5b56" text-anchor="middle">média geral</text>
+    <polygon points="360.0,110.0 408.5,138.0 408.5,194.0 360.0,222.0 311.5,194.0 311.5,138.0" fill="#ffffff" stroke="#dcdad3"/>
+    <polygon points="360.0,129.0 392.0,147.5 392.0,184.5 360.0,203.0 328.0,184.5 328.0,147.5" fill="none" stroke="#dcdad3"/>
+    <polygon points="360.0,147.5 376.0,156.8 376.0,175.2 360.0,184.5 344.0,175.2 344.0,156.8" fill="none" stroke="#dcdad3"/>
+    <line x1="360" y1="166" x2="360.0" y2="110.0" stroke="#e6e4de"/>
+    <line x1="360" y1="166" x2="408.5" y2="138.0" stroke="#e6e4de"/>
+    <line x1="360" y1="166" x2="408.5" y2="194.0" stroke="#e6e4de"/>
+    <line x1="360" y1="166" x2="360.0" y2="222.0" stroke="#e6e4de"/>
+    <line x1="360" y1="166" x2="311.5" y2="194.0" stroke="#e6e4de"/>
+    <line x1="360" y1="166" x2="311.5" y2="138.0" stroke="#e6e4de"/>
+    <polygon points="360.0,114.5 395.9,145.3 401.2,189.8 360.0,199.6 317.3,190.6 326.1,146.4" fill="rgba(236,112,0,.2)" stroke="#ec7000" stroke-width="1.6"/>
+    <circle cx="360.0" cy="114.5" r="2.6" fill="#ec7000"/>
+    <circle cx="395.9" cy="145.3" r="2.6" fill="#ec7000"/>
+    <circle cx="401.2" cy="189.8" r="2.6" fill="#ec7000"/>
+    <circle cx="360.0" cy="199.6" r="2.6" fill="#ec7000"/>
+    <circle cx="317.3" cy="190.6" r="2.6" fill="#ec7000"/>
+    <circle cx="326.1" cy="146.4" r="2.6" fill="#ec7000"/>
+    <rect x="436" y="106" width="40" height="5" rx="2.5" fill="#d6d4cd"/>
+    <rect x="436" y="116" width="110" height="6" rx="3.0" fill="#ebe9e4"/>
+    <rect x="436" y="116" width="99.0" height="6" rx="3.0" fill="#ec7000"/>
+    <rect x="436" y="131" width="53" height="5" rx="2.5" fill="#d6d4cd"/>
+    <rect x="436" y="141" width="110" height="6" rx="3.0" fill="#ebe9e4"/>
+    <rect x="436" y="141" width="83.6" height="6" rx="3.0" fill="#ec7000"/>
+    <rect x="436" y="156" width="40" height="5" rx="2.5" fill="#d6d4cd"/>
+    <rect x="436" y="166" width="110" height="6" rx="3.0" fill="#ebe9e4"/>
+    <rect x="436" y="166" width="92.39999999999999" height="6" rx="3.0" fill="#ec7000"/>
+    <rect x="436" y="181" width="53" height="5" rx="2.5" fill="#d6d4cd"/>
+    <rect x="436" y="191" width="110" height="6" rx="3.0" fill="#ebe9e4"/>
+    <rect x="436" y="191" width="68.2" height="6" rx="3.0" fill="#f0a35e"/>
+    <rect x="436" y="206" width="40" height="5" rx="2.5" fill="#d6d4cd"/>
+    <rect x="436" y="216" width="110" height="6" rx="3.0" fill="#ebe9e4"/>
+    <rect x="436" y="216" width="77.0" height="6" rx="3.0" fill="#ec7000"/>
+    <rect x="188" y="246" width="56" height="20" rx="10" fill="#ffffff" stroke="#e6e4de"/>
+    <path d="M196 256l2.5 2.5 4.5-5" fill="none" stroke="#2f7a45" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="207" y="259" font-size="8" font-weight="500" fill="#0b0b0b" text-anchor="start">Gestor</text>
+    <rect x="250" y="246" width="48" height="20" rx="10" fill="#ffffff" stroke="#e6e4de"/>
+    <path d="M258 256l2.5 2.5 4.5-5" fill="none" stroke="#2f7a45" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="269" y="259" font-size="8" font-weight="500" fill="#0b0b0b" text-anchor="start">Pares</text>
+    <rect x="304" y="246" width="54" height="20" rx="10" fill="#ffffff" stroke="#e6e4de"/>
+    <path d="M312 256l2.5 2.5 4.5-5" fill="none" stroke="#2f7a45" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="323" y="259" font-size="8" font-weight="500" fill="#0b0b0b" text-anchor="start">Equipe</text>
+    <rect x="364" y="246" width="84" height="20" rx="10" fill="#ffffff" stroke="#e6e4de"/>
+    <path d="M372 256l2.5 2.5 4.5-5" fill="none" stroke="#2f7a45" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="383" y="259" font-size="8" font-weight="500" fill="#0b0b0b" text-anchor="start">Autoavaliação</text>
+    <rect x="188" y="278" width="358" height="40" rx="6" fill="#ffffff" stroke="#e6e4de"/>
+    <rect x="200" y="290" width="150" height="6" rx="3.0" fill="#dcdad3"/>
+    <rect x="200" y="302" width="220" height="5" rx="2.5" fill="#e6e4de"/>
+    <rect x="472" y="288" width="62" height="20" rx="10" fill="#141414"/>
+    <text x="503" y="301" font-size="8" font-weight="600" fill="#f4f3f0" text-anchor="middle">Ver evolução</text>
+  </g>
+  <path d="M30 356H610l-8 10.5c-2.6 3.3-6.4 5.5-10.6 5.5H48.6c-4.2 0-8-2.2-10.6-5.5z" fill="url(#base)"/>
+  <rect x="282" y="356" width="76" height="5" rx="2.5" fill="#18181a"/>
+</svg>

@@ -43,7 +43,7 @@
     return function () { cancelado = true; if (paraFluxo) paraFluxo(); raiz.classList.remove('gsap'); };
   });
 
-  /* ---------- topo: o ponto percorre o fluxo, etapa por etapa, e volta pela evolução ---------- */
+  /* ---------- topo: o ponto percorre o fluxo, etapa por etapa, e a evolução (04) o leva de volta à Imersão (01) ---------- */
   function fluxo(c) {
     var lista = d.querySelector('[data-fluxo]');
     if (!lista) return null;
@@ -56,7 +56,7 @@
     ponto.setAttribute('role', 'presentation');
     lista.appendChild(ponto);
 
-    var tl = null;
+    var entrada = null, volta = null;
     var visivel = true;
     // posições de layout (sem transformações), relativas à lista
     function centro(el) { return { x: el.offsetLeft + el.offsetWidth / 2, y: el.offsetTop + el.offsetHeight / 2 }; }
@@ -64,40 +64,61 @@
       nos.forEach(function (n, i) { n.classList.toggle('ativo', i === alvo); });
       if (laco) laco.classList.toggle('ativo', alvo === 'laco');
     }
+    function tocar() {
+      if (!visivel) return;
+      if (entrada && entrada.progress() < 1) entrada.play(); else if (volta) volta.play();
+    }
+    function parar() { if (entrada) entrada.pause(); if (volta) volta.pause(); }
     function montar() {
-      if (tl) tl.kill();
+      if (entrada) entrada.kill();
+      if (volta) volta.kill();
       ativar(-1);
       var p = nos.map(centro);
-      tl = gsap.timeline({ repeat: -1, repeatDelay: 0.6, paused: !visivel, defaults: { ease: 'power1.inOut' } });
-      tl.set(ponto, { x: p[0].x, y: p[0].y, opacity: 0 })
+      var passo = c.largo ? 1.05 : 0.85;
+      // entrada (uma vez): o ponto aparece no processo de hoje e entra na Imersão (01)
+      entrada = gsap.timeline({ paused: true, defaults: { ease: 'power1.inOut' }, onComplete: function () { if (visivel && volta) volta.play(); } });
+      entrada.set(ponto, { x: p[0].x, y: p[0].y, opacity: 0 })
         .call(ativar, [0])
-        .to(ponto, { opacity: 1, duration: 0.3 }, '+=0.9');
-      for (var i = 1; i < p.length; i++) {
-        tl.to(ponto, { x: p[i].x, y: p[i].y, duration: c.largo ? 1.05 : 0.85 })
+        .to(ponto, { opacity: 1, duration: 0.3 }, '+=0.9')
+        .to(ponto, { x: p[1].x, y: p[1].y, duration: passo })
+        .call(ativar, [1])
+        .to({}, { duration: 0.75 });
+      // volta (repete): da Imersão até o sistema e, pela evolução (04), de novo à Imersão (01), não ao processo de hoje
+      volta = gsap.timeline({ paused: true, repeat: -1, defaults: { ease: 'power1.inOut' } });
+      for (var i = 2; i < p.length; i++) {
+        volta.to(ponto, { x: p[i].x, y: p[i].y, duration: passo })
           .call(ativar, [i])
           .to({}, { duration: i === p.length - 1 ? 1.4 : 0.75 });
       }
       if (laco) {
         if (c.largo) {
-          // desce do sistema, volta por baixo e sobe de novo ao processo
+          // desce do sistema, volta por baixo e sobe na Imersão
           var base = laco.offsetTop + laco.offsetHeight - 0.5;
-          tl.to(ponto, { y: base, duration: 0.55, ease: 'power1.in' })
+          volta.to(ponto, { y: base, duration: 0.55, ease: 'power1.in' })
             .call(ativar, ['laco'])
-            .to(ponto, { x: p[0].x, duration: 2.6, ease: 'none' })
-            .to(ponto, { y: p[0].y, duration: 0.6, ease: 'power1.out' });
+            .to(ponto, { x: p[1].x, duration: 2.2, ease: 'none' })
+            .to(ponto, { y: p[1].y, duration: 0.6, ease: 'power1.out' })
+            .call(ativar, [1])
+            .to({}, { duration: 0.9 });
         } else {
+          // no celular o laço é um bloco embaixo: o ponto chega nele e reaparece na Imersão
           var q = centro(laco);
-          tl.to(ponto, { x: q.x, y: q.y, duration: 0.85 })
+          volta.to(ponto, { x: q.x, y: q.y, duration: passo })
             .call(ativar, ['laco'])
             .to({}, { duration: 1.4 })
-            .to(ponto, { opacity: 0, duration: 0.3 });
+            .to(ponto, { opacity: 0, duration: 0.3 })
+            .set(ponto, { x: p[1].x, y: p[1].y })
+            .call(ativar, [1])
+            .to(ponto, { opacity: 1, duration: 0.3 })
+            .to({}, { duration: 0.6 });
         }
       }
+      tocar();
     }
     montar();
     var gatilho = ST.create({
       trigger: lista, start: 'top bottom', end: 'bottom top',
-      onToggle: function (s) { visivel = s.isActive; if (!tl) return; if (visivel) tl.play(); else tl.pause(); }
+      onToggle: function (s) { visivel = s.isActive; if (visivel) tocar(); else parar(); }
     });
     // ao mudar o tamanho da tela, as posições mudam: monta de novo
     var aoAtualizar = function () { montar(); };
@@ -105,7 +126,8 @@
     return function () {
       ST.removeEventListener('refresh', aoAtualizar);
       gatilho.kill();
-      if (tl) tl.kill();
+      if (entrada) entrada.kill();
+      if (volta) volta.kill();
       ativar(-1);
       if (ponto.parentNode) ponto.parentNode.removeChild(ponto);
     };
