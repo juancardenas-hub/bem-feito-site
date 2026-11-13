@@ -527,7 +527,8 @@ img.depoimento__foto { object-fit: cover; padding: 0; }
 .logos picture { display: contents; } /* a imagem vira o item do cartão e fica centrada nele */
 .logos img.logo--largo { width: min(100%, 220px); height: auto; }
 @media (max-width: 1023px) { .clientes__grade, .clientes__depo { grid-template-columns: minmax(0, 1fr); } }
-@media (max-width: 520px) { .logos li { min-height: 96px; } .logos img { height: 46px; } .logos img.logo--alto { height: 60px; } }
+/* com 6 logos (12/11), dois por linha no celular */
+@media (max-width: 520px) { .logos li { flex-basis: 140px; min-height: 96px; padding: 16px 14px; } .logos img { height: 46px; } .logos img.logo--alto { height: 60px; } }
 
 /* depoimentos em vídeo, pequenos (Home): a capa com o botão de play; o clique abre a janela do vídeo */
 .depo-mini { display: grid; gap: 16px; }
